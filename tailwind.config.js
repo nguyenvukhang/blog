@@ -10,7 +10,8 @@ module.exports = {
         'blue-opaque': 'rgb(13 42 148 / 18%)'
       },
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans]
+        sans: ['Inter', ...fontFamily.sans],
+        mono: ['JetBrains Mono', ...fontFamily.mono]
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -27,6 +28,7 @@ module.exports = {
               'scroll-margin-top': spacing[32]
             },
             code: { color: theme('colors.pink.500') },
+            pre: { color: theme('colors.pink.500') },
             'blockquote p:first-of-type::before': false,
             'blockquote p:last-of-type::after': false
           }
