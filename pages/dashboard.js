@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Container from '@/components/Container';
 import GitHub from '@/components/metrics/Github';
 import TopTracks from '@/components/TopTracks';
+import TopArtists from '@/components/TopArtists';
 
 export default function Dashboard() {
   return (
@@ -31,6 +32,10 @@ export default function Dashboard() {
           updated daily.
         </p>
         <TopTracks />
+        <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
+          Top Artists
+        </h2>
+        <TopArtists />
       </div>
     </Container>
   );
