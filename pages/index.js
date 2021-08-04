@@ -2,10 +2,6 @@ import Link from 'next/link';
 
 import Timeline from '../components/Timeline';
 import Container from '../components/Container';
-import BlogPost from '../components/BlogPost';
-import Subscribe from '../components/Subscribe';
-import ProjectCard from '../components/ProjectCard';
-import VideoCard from '../components/VideoCard';
 
 export default function Home() {
   return (
@@ -15,10 +11,10 @@ export default function Home() {
           Hey, I’m Khang
         </h1>
         <h2 className="prose text-gray-600 dark:text-gray-400 mb-16">
-          I'm a developer, an athlete, and a university student. I currently read an undergraduate
-          degree for mathematics at the National Univerisity of Singapore.
-          You’ve found my personal slice of the internet
-          –&nbsp;
+          I'm a developer, an athlete, and a university student. I'm currently
+          reading an undergraduate degree for mathematics at the National
+          Univerisity of Singapore.  You’ve found my personal slice of the
+          internet –&nbsp;
           <Link href="/about">
             <a>learn more about me.</a>
           </Link>
