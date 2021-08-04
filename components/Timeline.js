@@ -45,7 +45,7 @@ const FullTimeline = () => (
     <ul>
       <Step title="Started High School">
         Started secondary education at Hwa Chong Institution, where I joined the
-        Hwa Chong Canoeing Team.
+        canoeing team.
       </Step>
     </ul>
     <Divider />
