@@ -1,8 +1,18 @@
-import Container from '@/components/Container';
-import FunctionCard from '@/components/FunctionCard';
-import { getAllFilesFrontMatter } from '@/lib/mdx';
+import Container from '@/components/Container'
+import FunctionCard from '@/components/FunctionCard'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 export default function Snippets({ snippets }) {
+  function compare(a, b) {
+    if (a.title < b.title) {
+      return -1
+    }
+    if (a.title > b.title) {
+      return 1
+    }
+    return 0
+  }
+  snippets.sort(compare)
   return (
     <Container
       title="Code Snippets – Nguyen Vu Khang"
@@ -24,18 +34,17 @@ export default function Snippets({ snippets }) {
               key={snippet.slug}
               title={snippet.title}
               slug={snippet.slug}
-              logo={snippet.logo}
               description={snippet.description}
             />
           ))}
         </div>
       </div>
     </Container>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const snippets = await getAllFilesFrontMatter('snippets');
+  const snippets = await getAllFilesFrontMatter('snippets')
 
-  return { props: { snippets } };
+  return { props: { snippets } }
 }

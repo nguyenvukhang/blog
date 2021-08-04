@@ -1,0 +1,36 @@
+---
+title: 'Javascript'
+description: 'NaN === NaN is false'
+---
+
+## Convert Excel array to an array of objects
+
+An example input is:
+```js
+data = [
+  ['Name', 'Gender', 'Year'],
+  ['Jacob', 'M', '1996'],
+  ['Roxanne', 'F', '1999'],
+  ['Calista', 'F', '2000'],
+]
+```
+And the desired output is:
+```js
+result = [
+  { Name: 'Jacob', Gender: 'M', Year: '1996' },
+  { Name: 'Roxanne', Gender: 'F', Year: '1999' },
+  { Name: 'Calista', Gender: 'F', Year: '2000' }
+]
+```
+Here's how I did it:
+```js
+const headers = data.shift()
+const result = data.map((person) => 
+  headers.reduce(
+    (obj, key, index) => ({
+      ...obj,
+      [key]: person[index]
+    }), {}
+  )
+)
+```

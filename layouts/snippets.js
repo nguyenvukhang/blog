@@ -18,15 +18,6 @@ export default function SnippetLayout({ children, frontMatter }) {
               {frontMatter.description}
             </p>
           </div>
-          <div className="mt-2 sm:mt-0">
-            <Image
-              alt={frontMatter.title}
-              height={48}
-              width={48}
-              src={`/logos/${frontMatter.logo}`}
-              className="rounded-full"
-            />
-          </div>
         </div>
         <div className="prose dark:prose-dark w-full">{children}</div>
       </article>
