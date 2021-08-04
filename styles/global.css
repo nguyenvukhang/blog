@@ -200,3 +200,11 @@ table {
   display: block;
   overflow-y: scroll;
 }
+
+.prose code::before {
+  content: ''
+}
+
+.prose code::after {
+  content: ''
+}
