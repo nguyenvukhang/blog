@@ -1,0 +1,38 @@
+---
+title: "Configuring vimrc"
+publishedAt: '2021-08-04'
+summary: "Core settings to kick start your journey with vim"
+---
+
+# Configuring vimrc
+
+Unlike most applications with a graphical settings menu, vim's settings are configured inside of a **vimrc** file. But where do you find/put this file?
+
+If you're in neovim, you can drop it in <pre>~/.config/nvim/init.vim</pre>
+And if you're in regular vim, you can place it in <pre>~/.vim/vimrc/</pre>
+
+This is my [vimrc](https://github.com/nguyenvukhang/neovim/blob/master/init.vim). But for this discussion I'll be focusing on configuring vim from its original state.
+
+So here's the minimal state of a nicely-working vimrc:
+```
+set tabstop=2
+set softtabstop=2
+set expandtab
+set shiftwidth=2
+set wrap linebreak
+set breakindent
+set relativenumber
+set number
+set incsearch
+set nohlsearch
+set hidden
+set noswapfile
+set nobackup
+set scrolloff=10
+set undofile
+set undodir=~/.config/nvim/undodir
+set termguicolors
+set guicursor=
+set noerrorbells
+set autochdir
+```
