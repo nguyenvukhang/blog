@@ -16,9 +16,8 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Nguyen Vu Khang – Developer, writer, creator.',
-    description: `Front-end developer, JavaScript enthusiast, and course creator.`,
-    image: 'https://leerob.io/static/images/banner.png',
+    title: 'Nguyen Vu Khang.',
+    description: `Developer, athlete, student`,
     type: 'website',
     ...customMeta
   };
