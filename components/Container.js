@@ -45,7 +45,7 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav className="flex items-center justify-between w-full max-w-4xl p-8 mx-auto my-0 text-gray-900 bg-white sticky-nav md:my-8 dark:bg-black bg-opacity-60 dark:text-gray-100">
+      <nav className="flex items-center justify-between w-full max-w-4xl px-8 py-6 mx-auto my-0 text-gray-900 bg-white sticky-nav md:my-8 dark:bg-black bg-opacity-60 dark:text-gray-100">
         <button
           aria-label="Toggle Dark Mode"
           type="button"
@@ -80,16 +80,16 @@ export default function Container(props) {
         </button>
         <div>
           <NextLink href="/blog">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Blog</a>
+            <a className="pl-3 text-gray-900 sm:p-4 dark:text-gray-100">Blog</a>
           </NextLink>
           <NextLink href="/photos">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Photos</a>
+            <a className="pl-3 text-gray-900 sm:p-4 dark:text-gray-100">Photos</a>
           </NextLink>
           <NextLink href="/about">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">About</a>
+            <a className="pl-3 text-gray-900 sm:p-4 dark:text-gray-100">About</a>
           </NextLink>
           <NextLink href="/">
-            <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Home</a>
+            <a className="pl-3 text-gray-900 sm:p-4 dark:text-gray-100">Home</a>
           </NextLink>
         </div>
       </nav>
