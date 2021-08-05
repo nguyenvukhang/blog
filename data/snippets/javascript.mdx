@@ -39,6 +39,14 @@ const result = data.map((person) =>
 ```js
 const empty = {};
 
-Object.keys(empty).length === 0 && empty.constructor === Object
+JSON.stringify(empty) === "{}"
 // true
+```
+
+## Remove last character of a string
+```js
+let str = "12345.00";
+str = str.slice(0, -1); 
+console.log(str);
+// 12345.0
 ```
