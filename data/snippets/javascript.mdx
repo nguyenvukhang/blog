@@ -11,7 +11,7 @@ data = [
   ['Name', 'Gender', 'Year'],
   ['Jacob', 'M', '1996'],
   ['Roxanne', 'F', '1999'],
-  ['Calista', 'F', '2000'],
+  ['Calista', 'F', '2000']
 ]
 ```
 And the desired output is:
@@ -33,4 +33,12 @@ const result = data.map((person) =>
     }), {}
   )
 )
+```
+
+## Check if object is empty
+```js
+const empty = {};
+
+Object.keys(empty).length === 0 && empty.constructor === Object
+// true
 ```
