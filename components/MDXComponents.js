@@ -38,7 +38,7 @@ const Kbd = ({ children }) => {
   const parts = nospace.includes('+') ? nospace.split('+') : [nospace]
   const style = {
     background: 'rgb(220, 220, 220)',
-    fontWeight: 'bold',
+    fontWeight: 600,
     fontSize: 'smaller',
     borderRadius: '4px',
     boxShadow: '0 3px rgb(189, 189, 189)',
