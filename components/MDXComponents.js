@@ -33,7 +33,36 @@ const CenteredImage = (props) => {
   )
 }
 
+const Kbd = ({ children }) => {
+  const nospace = children.replace(/ /g, '')
+  const parts = nospace.includes('+') ? nospace.split('+') : [nospace]
+  const style = {
+    background: 'rgb(220, 220, 220)',
+    fontWeight: 'bold',
+    fontSize: 'smaller',
+    borderRadius: '4px',
+    boxShadow: '0 3px rgb(189, 189, 189)',
+    padding: '1px 3px 0'
+  }
+  const span = {
+    margin: '0 0.2ch'
+  }
+  return (
+    <>
+      <kbd style={style}>{parts.shift()}</kbd>
+      {parts.map((d) => (
+        <>
+          <span style={span}>+</span>
+          <kbd style={style}>{d}</kbd>
+        </>
+      ))}
+    </>
+  )
+
+}
+
 const MDXComponents = {
+  Kbd,
   Image,
   CenteredImage,
   ImageWithTheme,
