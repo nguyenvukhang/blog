@@ -21,8 +21,21 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
+const CenteredImage = (props) => {
+  const outer = {
+    display: 'flex',
+    justifyContent: 'center',
+  }
+  return (
+    <div style={outer}>
+        <Image {...props} />
+    </div>
+  )
+}
+
 const MDXComponents = {
   Image,
+  CenteredImage,
   ImageWithTheme,
   a: CustomLink,
   ConsCard,
