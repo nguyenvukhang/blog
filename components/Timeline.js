@@ -1,18 +1,18 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 const Divider = () => {
   return (
     <div className="border border-gray-200 dark:border-gray-600 w-full my-8" />
-  );
-};
+  )
+}
 
 const Year = ({ children }) => {
   return (
     <h3 className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
       {children}
     </h3>
-  );
-};
+  )
+}
 
 const Step = ({ title, children }) => {
   return (
@@ -35,11 +35,25 @@ const Step = ({ title, children }) => {
       </div>
       <p className="text-gray-700 dark:text-gray-400 ml-6">{children}</p>
     </li>
-  );
-};
+  )
+}
 
 const FullTimeline = () => (
   <>
+    <ul>
+      <Step title="Completed A-Levels">
+        The last peak of academic excellence for a long time.
+      </Step>
+    </ul>
+    <ul>
+      <Step title="Second Half Marathon">
+        Went for my second 21km on the morning before A-Levels Physics practical
+        test: Army Half Marathon 2018.
+      </Step>
+      <Step title="First Half Marathon">
+        Went for my first 21km: Marina Run 2018.
+      </Step>
+    </ul>
     <Divider />
     <Year>2013</Year>
     <ul>
@@ -51,7 +65,9 @@ const FullTimeline = () => (
     <Divider />
     <Year>2010</Year>
     <ul>
-      <Step title="Moved school">Moved over to Catholic High School (Primary).</Step>
+      <Step title="Moved school">
+        Moved over to Catholic High School (Primary).
+      </Step>
     </ul>
     <Divider />
     <Year>2007</Year>
@@ -66,16 +82,23 @@ const FullTimeline = () => (
       <Step title="Born" />
     </ul>
   </>
-);
+)
 
 export default function Timeline() {
-  const [isShowingFullTimeline, showFullTimeline] = useState(false);
+  const [isShowingFullTimeline, showFullTimeline] = useState(false)
 
   return (
     <>
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-4 text-black dark:text-white">
         Timeline
       </h3>
+      <Year>2022</Year>
+      <ul>
+        <Step title="Started University">
+          Began studies at the National University of Singapore.
+        </Step>
+      </ul>
+      <Divider />
       <Year>2021</Year>
       <ul>
         <Step title="Operationally Ready">
@@ -85,6 +108,11 @@ export default function Timeline() {
       <Divider />
       <Year>2019</Year>
       <ul>
+        <Step title="First Marathon">
+          Just after coming back from an overseas exercise in Brunei, I went
+          for my first marathon: Standard Chartered Singapore Marathon. Ran a
+          few km with an old friend Mr Yong Yuen Cheng.
+        </Step>
         <Step title="Enlisted in the SAF">
           Became a recruit and bald at the lovely island of Pulau Tekong.
         </Step>
@@ -100,9 +128,6 @@ export default function Timeline() {
         <Step title="Graduated JC">
           Summed up a solid six years in Hwa Chong Institution and Hwa Chong
           Canoeing.
-        </Step>
-        <Step title="Completed A-Levels">
-          The last peak of academic excellence for a long time.
         </Step>
       </ul>
       {isShowingFullTimeline ? (
@@ -131,5 +156,5 @@ export default function Timeline() {
         </button>
       )}
     </>
-  );
+  )
 }
