@@ -26,7 +26,6 @@ const Page = () => {
     ))
   })
   */
-  console.log(result)
   return null
 }
 export default Page
