@@ -32,6 +32,7 @@ export default function Footer() {
         <div className="flex flex-col space-y-4">
           <ExternalLink href="https://instagram.com/nvkse">Instagram</ExternalLink>
           <ExternalLink href="https://github.com/nguyenvukhang">GitHub</ExternalLink>
+          <ExternalLink href="https://soundcloud.com/tappitytap">SoundCloud</ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
           <Link href="/music">
