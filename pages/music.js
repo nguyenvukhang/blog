@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import Container from '@/components/Container';
 import TopTracks from '@/components/TopTracks';
 import TopArtists from '@/components/TopArtists';

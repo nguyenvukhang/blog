@@ -116,7 +116,7 @@ export default function Timeline() {
         <Step title="Enlisted in the SAF">
           Became a recruit and bald at the lovely island of Pulau Tekong.
         </Step>
-        <Step title="Solo Roadtrip">
+        <Step title="Japan Roadtrip">
           To celebrate graduating, I went on a road trip from Fukuoka, Japan to
           Tokyo, purposely avoiding the beaten paths and exploring every corner
           of Japan. An unforgettable experience.
