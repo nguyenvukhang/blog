@@ -25,7 +25,7 @@ export default function Blog({ posts }) {
           Blog
         </h1>
         <p className="text-gray-600 dark:text-gray-400 mb-4">
-          {`I've been writing online since 2021, mostly about web development and math.
+          {`I've been writing online since 2021.
             In total, I've written ${posts.length} articles on this site.
             Use the search below to filter by title.`}
         </p>
