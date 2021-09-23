@@ -92,15 +92,11 @@ export default function Timeline() {
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-4 text-black dark:text-white">
         Timeline
       </h3>
-      <Year>2022</Year>
-      <ul>
-        <Step title="Started University">
-          Began studies at the National University of Singapore.
-        </Step>
-      </ul>
-      <Divider />
       <Year>2021</Year>
       <ul>
+        <Step title="Started University">
+          At the National University of Singapore.
+        </Step>
         <Step title="Operationally Ready">
           Completed conscription at Singapore Armed Forces.
         </Step>
@@ -126,8 +122,7 @@ export default function Timeline() {
       <Year>2018</Year>
       <ul>
         <Step title="Graduated JC">
-          Summed up a solid six years in Hwa Chong Institution and Hwa Chong
-          Canoeing.
+          End of an era.
         </Step>
       </ul>
       {isShowingFullTimeline ? (
