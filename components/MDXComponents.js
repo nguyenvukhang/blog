@@ -61,7 +61,17 @@ const Kbd = ({ children }) => {
 
 }
 
+const inlineCode = ({ children }) => {
+  const style = {
+    fontWeight: 400
+  }
+  return ( 
+    <code style={style}>{children}</code>
+  )
+}
+
 const MDXComponents = {
+  inlineCode,
   Kbd,
   Image,
   CenteredImage,
