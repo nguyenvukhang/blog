@@ -1,0 +1,28 @@
+#! /bin/zsh
+
+NORMAL="\e[1;0m"
+GREEN="\e[1;32m"
+
+# require one argument
+[ -z $1 ] && echo "no arguments provided" && exit
+[ $2 ] && echo "too many arguments provided" && exit
+
+echo "creating ${GREEN}ideas/$1.mdx${NORMAL}..."
+
+d=$(date '+%Y-%m-%d')
+mkdir -p ideas
+cat << EOF > ideas/$1.mdx
+---
+title: 'title'
+publishedAt: '$d'
+summary: 'summary'
+---
+
+gud stuff.
+EOF
+
+echo "symlinking to ${GREEN}blog/$1.mdx${NORMAL}..."
+
+ln -sf ../ideas/$1.mdx blog/
+
+echo "done."
