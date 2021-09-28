@@ -30,30 +30,15 @@ custom boarding
 soldering
 qmk adventures
 
-Travel stories (with photos!)
-Beijing
-USA
-Japan
+Get Started {{{
+* qmk
+}}}
+
+Travel stories {{{
+(with photos!)
+* Beijing
+* USA
+* Japan
+}}}
 
 Stories
-
-What happens after installing Arch Linux
-  [./ideas/after-installing-arch.mdx] {{{
-First things first, I installed a display server and a window manager. This
-enabled me to launch firefox.
-
-Since I still foresee myself using an internet browser and watching Netflix, the
-first thing I did was to install a gui
-I loved it, how clean it was.
-
-Since then, I've handpicked packages to install, from a window manager to a
-wallpaper setter 
-
-I love the package manager.
-I love how fast it boots up.
-I love the amount of control it gives the user over the system.
-I love how close to nothing extra is installed on the system.
-Things I still think about when I use arch
-  having an intuitive image editor (like Affinity Photo)
-  having decent battery life (macOS is still far ahead in power management)
-}}}
