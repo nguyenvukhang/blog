@@ -56,6 +56,9 @@ export default function About() {
             Mathematics. I spend my free time slipping and sliding in vim,
             building websites, and enjoying time with friends and family.
           </p>
+          <p>
+            You can contact <a href="mailto:me@nguyenvukhang.com">me@nguyenvukhang.com</a>.
+          </p>
         </div>
       </div>
     </Container>
