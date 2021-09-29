@@ -22,7 +22,6 @@ export default function Tags({ posts }) {
     } else {
       setOnTags([e])
     }
-    console.log(onTags)
   }
 
   const TagList = ({ posts }) => {
@@ -46,33 +45,39 @@ export default function Tags({ posts }) {
     }
     const onStyle = {
       borderColor: '#60A5FA',
-      cursor: 'pointer',
-      borderWidth: '2px'
+      borderWidth: '2px',
+      cursor: 'pointer'
     }
     return (
-      <div>
+      <div className="flex flex-wrap max-w-2xl mb-16">
         {tags.map((e) => (
-          <a
-            className="text-gray-700 dark:text-gray-300 mb-4 mx-1 py-0.5 px-1.5 bg-gray-200 dark:bg-gray-800 rounded-md"
-            onClick={() => tagClick(e[0])}
-            style={
-              onTags[0] == e[0] && onTags.length === 1 ? onStyle : offStyle
-            }
-          >
-            <span>{e[0]}</span>
-            <span> </span>
-            <span className="text-gray-500 dark:text-gray-400 text-xs">
-              {e[1]}
-            </span>
-          </a>
+          <div className="mb-1.5">
+            <a
+              className="text-gray-700 dark:text-gray-300 mx-1 py-0.5 px-1.5 bg-gray-200 dark:bg-gray-800 rounded-md"
+              onClick={() => tagClick(e[0])}
+              key={e[0]}
+              style={
+                onTags[0] == e[0] && onTags.length === 1 ? onStyle : offStyle
+              }
+            >
+              <span>
+                {e[0] + ' '}
+                <span className="text-gray-500 dark:text-gray-400 text-xs">
+                  {e[1]}
+                </span>
+              </span>
+            </a>
+          </div>
         ))}
-        <a
-          onClick={() => tagClick(tl)}
-          style={offStyle}
-          className="text-gray-700 dark:text-gray-300 mb-4 mx-1 py-0.5 px-1.5 bg-blue-200 dark:bg-blue-900 rounded-md"
-        >
-          clear
-        </a>
+        <div className="mb-1.5">
+          <a
+            onClick={() => tagClick(tl)}
+            style={offStyle}
+            className="text-gray-700 dark:text-gray-300 mb-4 mx-1 py-0.5 px-1.5 bg-blue-200 dark:bg-blue-900 rounded-md"
+          >
+            clear
+          </a>
+        </div>
       </div>
     )
   }
