@@ -1,19 +1,96 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
-import Container from '@/components/Container';
-import BlogPost from '@/components/BlogPost';
-import { getAllFilesFrontMatter } from '@/lib/mdx';
+import Container from '@/components/Container'
+import BlogPost from '@/components/BlogPost'
+import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 export default function Blog({ posts }) {
-  const [searchValue, setSearchValue] = useState('');
+  const tl = []
+  for (const i in posts) {
+    posts[i].tags.forEach((t) => {
+      if (!tl.includes(t)) {
+        tl.push(t)
+      }
+    })
+  }
+
+  const [onTags, setOnTags] = useState(tl)
+
+  function tagClick(e) {
+    if (typeof e == 'object') {
+      setOnTags(e)
+    } else {
+      setOnTags([e])
+    }
+  }
+
+  const TagList = ({ posts }) => {
+    const _tags = {}
+    const tags = []
+    for (const i in posts) {
+      posts[i].tags.forEach((t) => {
+        if (t in _tags) {
+          _tags[t] += 1
+        } else {
+          _tags[t] = 1
+        }
+      })
+    }
+    for (const i in _tags) {
+      tags.push([i, _tags[i]])
+    }
+    tags.sort()
+    const offStyle = {
+      cursor: 'pointer'
+    }
+    const onStyle = {
+      borderColor: '#60A5FA',
+      borderWidth: '2px',
+      cursor: 'pointer'
+    }
+    return (
+      <div className="flex flex-wrap max-w-2xl">
+        {tags.map((e) => (
+          <div className="mb-1.5" key={e[0]}>
+            <a
+              className="text-gray-700 dark:text-gray-300 mx-1 py-0.5 px-1.5 bg-gray-200 dark:bg-gray-800 rounded-md"
+              onClick={() => tagClick(e[0])}
+              style={
+                onTags[0] == e[0] && onTags.length === 1 ? onStyle : offStyle
+              }
+            >
+              <span>
+                {e[0] + ' '}
+                <span className="text-gray-500 dark:text-gray-400 text-xs">
+                  {e[1]}
+                </span>
+              </span>
+            </a>
+          </div>
+        ))}
+        <div className="mb-1.5">
+          <a
+            onClick={() => tagClick(tl)}
+            style={offStyle}
+            className="text-gray-700 dark:text-gray-300 mb-4 mx-1 py-0.5 px-1.5 bg-blue-200 dark:bg-blue-900 rounded-md"
+          >
+            clear
+          </a>
+        </div>
+      </div>
+    )
+  }
+  const [searchValue, setSearchValue] = useState('')
   const filteredBlogPosts = posts
     .sort(
       (a, b) =>
         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
     )
-    .filter((frontMatter) =>
-      frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
-    );
+    .filter(
+      (frontMatter) =>
+        frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()) &&
+        frontMatter.tags.some((val) => onTags.includes(val))
+    )
 
   return (
     <Container
@@ -27,7 +104,8 @@ export default function Blog({ posts }) {
         <p className="text-gray-600 dark:text-gray-400 mb-4">
           {`I've been writing online since 2021.
             In total, I've written ${posts.length} articles on this site.
-            Use the search below to filter by title.`}
+            Use the search below to filter by title, or use the buttons
+            below to filter by tag.`}
         </p>
         <div className="relative w-full mb-4">
           <input
@@ -52,24 +130,25 @@ export default function Blog({ posts }) {
             />
           </svg>
         </div>
+        <TagList posts={posts} />
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           All Posts
         </h3>
-        {!filteredBlogPosts.length && 
+        {!filteredBlogPosts.length && (
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             No posts found.
           </p>
-        }
+        )}
         {filteredBlogPosts.map((frontMatter) => (
           <BlogPost key={frontMatter.title} {...frontMatter} />
         ))}
       </div>
     </Container>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog');
+  const posts = await getAllFilesFrontMatter('blog')
 
-  return { props: { posts } };
+  return { props: { posts } }
 }
