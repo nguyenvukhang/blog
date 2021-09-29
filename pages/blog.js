@@ -53,7 +53,8 @@ export default function Blog({ posts }) {
         {tags.map((e) => (
           <div className="mb-1.5" key={e[0]}>
             <a
-              className="text-gray-700 dark:text-gray-300 mx-1 py-0.5 px-1.5 bg-gray-200 dark:bg-gray-800 rounded-md"
+              className="text-gray-700 dark:text-gray-300 mx-1 px-1
+              bg-gray-200 dark:bg-gray-800 rounded-md border-2"
               onClick={() => tagClick(e[0])}
               style={
                 onTags[0] == e[0] && onTags.length === 1 ? onStyle : offStyle
