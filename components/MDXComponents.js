@@ -1,34 +1,34 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link'
+import Image from 'next/image'
 
-import ProsCard from '@/components/ProsCard';
-import ConsCard from '@/components/ConsCard';
-import Step from '@/components/Step';
-import ImageWithTheme from '@/components/ImageWithTheme';
+import ProsCard from '@/components/ProsCard'
+import ConsCard from '@/components/ConsCard'
+import Step from '@/components/Step'
+import ImageWithTheme from '@/components/ImageWithTheme'
 
 const CustomLink = (props) => {
-  const href = props.href;
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+  const href = props.href
+  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'))
 
   if (isInternalLink) {
     return (
       <Link href={href}>
         <a {...props}>{props.children}</a>
       </Link>
-    );
+    )
   }
 
-  return <a target="_blank" rel="noopener noreferrer" {...props} />;
-};
+  return <a target="_blank" rel="noopener noreferrer" {...props} />
+}
 
 const CenteredImage = (props) => {
   const outer = {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'center'
   }
   return (
     <div style={outer}>
-        <Image {...props} />
+      <Image {...props} />
     </div>
   )
 }
@@ -58,16 +58,13 @@ const Kbd = ({ children }) => {
       ))}
     </>
   )
-
 }
 
 const inlineCode = ({ children }) => {
   const style = {
     fontWeight: 400
   }
-  return ( 
-    <code style={style}>{children}</code>
-  )
+  return <code style={style}>{children}</code>
 }
 
 const MDXComponents = {
@@ -79,7 +76,7 @@ const MDXComponents = {
   a: CustomLink,
   ConsCard,
   ProsCard,
-  Step,
-};
+  Step
+}
 
-export default MDXComponents;
+export default MDXComponents
