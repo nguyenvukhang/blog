@@ -33,6 +33,23 @@ const CenteredImage = (props) => {
   )
 }
 
+const Img = (props) => {
+  const outer = {
+    display: 'flex',
+    justifyContent: 'center'
+  }
+  return (
+    <div style={outer}>
+      <Image
+        {...props}
+        alt="Photo"
+        priority
+        className="next-image"
+      />
+    </div>
+  )
+}
+
 const Kbd = ({ children }) => {
   const nospace = children.replace(/ /g, '')
   const parts = nospace.includes('+') ? nospace.split('+') : [nospace]
@@ -70,6 +87,7 @@ const inlineCode = ({ children }) => {
 const MDXComponents = {
   inlineCode,
   Kbd,
+  Img,
   Image,
   CenteredImage,
   ImageWithTheme,

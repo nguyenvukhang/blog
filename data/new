@@ -7,22 +7,18 @@ GREEN="\e[1;32m"
 [ -z $1 ] && echo "no arguments provided" && exit
 [ $2 ] && echo "too many arguments provided" && exit
 
-echo "creating ${GREEN}ideas/$1.mdx${NORMAL}..."
+echo "creating ${GREEN}blog/$1.mdx${NORMAL}..."
 
 d=$(date '+%Y-%m-%d')
-mkdir -p ideas
-cat << EOF > ideas/$1.mdx
+cat << EOF > blog/$1.mdx
 ---
 title: 'title'
 publishedAt: '$d'
 summary: 'summary'
+tags: [untagged]
 ---
 
 gud stuff.
 EOF
-
-echo "symlinking to ${GREEN}blog/$1.mdx${NORMAL}..."
-
-ln -sf ../ideas/$1.mdx blog/
-
 echo "done."
+nvim blog/$1.mdx
