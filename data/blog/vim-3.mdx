@@ -20,7 +20,7 @@ append text to the end of the line.
 The following methods will allow you to slip into Insert mode so fast you
 won't even realise it. Get used to these, and you're in for some real speed.
 
-## o is for oh snap
+### o
 
 So next, we have <Kbd>o</Kbd>. This key alone is a big reason why I find it so hard
 to go back to a point-and-click text editor. With your cursor anywhere on a line
@@ -29,7 +29,7 @@ properly indented, and put you in Insert mode. From anywhere in the line! You
 no longer have to go to the end and press enter. Just go to the line,
 press <Kbd>o</Kbd>, and you're good to go.
 
-### upper-case alter-egos
+### Upper case
 
 Now all of these keys have their upper case versions. <Kbd>I</Kbd> puts you in
 Insert mode to the left of the first character of that line, and <Kbd>A</Kbd>
@@ -55,8 +55,23 @@ word." The neat thing is: you can pair <Kbd>c</Kbd> with any verbs!
 (you can think of `ci` as "change in something" and `ca` as "change around
 something")
 
-ways to exit insert mode {
-  press escape
-  remap your caps lock key to escape for easier access
-  remap some other key combination to escape (some people to jj, some do jk)
-}
+# Exiting Insert Mode
+
+The first way is to simply press <Kbd>Esc</Kbd>. It's rather far off the home
+row so I remapped my caps lock key to send escape instead, so exiting Insert
+mode for me is a well within reach of my left little finger.
+
+Another way is to remap a specific combination of keystrokes to exit Insert
+mode. A common choice is `jk` because it's right on the home row. This can be
+done by adding this to your vimrc or init.vim:
+
+```
+inoremap jk <Esc>
+```
+
+This method saves the trouble of having to remap the caps lock key, or having to
+reach to the top-left of the board to exit Insert mode. It is also safe to press
+in Normal mode because it brings the cursor down then up, landing you back where
+you started.
+
+`jk`
