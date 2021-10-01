@@ -1,16 +1,18 @@
-Top Animes
+Top Animes {{{
 - Assassination Classroom
 - Charlotte
 - Toradora
+}}}
 
-Top Movies
+Top Movies {{{
 - 君の名は。(Your Name)
 - Interstellar
 - La La Land
 - Friends With Benefits
 - 3 Idiots
+}}}
 
-Studying for A Levels {
+Studying for A Levels {{{
   daily morning run (5km, alt btw chill and push)
   study the weak subjects more
   have lunch
@@ -18,20 +20,17 @@ Studying for A Levels {
   resume the grind
   maybe put on a timelapse
   go home
-}
+}}}
+
+Making covers {{{
 I used to make instrumental covers of songs
+}}}
 
-How I got started on git
-How I use zsh
-Why I love cli
-
+Mechanical Keyboard {{{
 mechanical keyboard adventures
 custom boarding
 soldering
 qmk adventures
-
-Get Started {{{
-* qmk
 }}}
 
 Travel stories {{{
@@ -53,14 +52,27 @@ the ability to think at a higher resolution
 Getting comfortable in my own skin {{{
 }}}
 
-fzf 
-
-Github: the developer's app store.
-
 My Keyboard 2 {{{
 Cool key combos that I coded in
 Power menu
 Pdf searcher, to open homework
 rofi app launcher
 screenshot shortcut
+}}}
+
+My vim journey - part 4 {{{
+(Moving faster within the buffer)
+f, F, t, T
+^, $
+gg, G
+12j
+Ctrl-D, Ctrl-U
+/
+}}}
+
+My vim journey - part 5 {{{
+(Moving faster across files)
+:e command
+file trees
+fuzzy finders
 }}}
