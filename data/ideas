@@ -52,14 +52,6 @@ the ability to think at a higher resolution
 Getting comfortable in my own skin {{{
 }}}
 
-My Keyboard 2 {{{
-Cool key combos that I coded in
-Power menu
-Pdf searcher, to open homework
-rofi app launcher
-screenshot shortcut
-}}}
-
 My vim journey - part 4 {{{
 (Moving faster within the buffer)
 f, F, t, T
@@ -75,4 +67,57 @@ My vim journey - part 5 {{{
 :e command
 file trees
 fuzzy finders
+}}}
+
+Thoughts on moving from coding back to math {{{
+
+[ Things that math can learn from code ]
+
+Variable scoping
+
+When programming something small, it's okay to name your variables things like
+`x` and `y` and not be worried of names conflicting. However, this doesn't hold
+in a larger project. Variables tend to be scoped within functions, so within the
+function the programmer can reuse common names without worrying about names
+bumping into things outside of the function.
+
+Math needs this. There needs to be a more common practice to scope variables so
+they remain more readable. We can't keep relying on extending over to Greek
+alphabets forever.
+
+Standardizing syntax
+
+Because most of math is expressed in conjunction with a written language,
+mathematical papers still leave room for misunderstanding. Unlike a programming
+language which has a mechanical compiler, the language of math is compiled by
+the human brain. While compilers are identical if on the same version, and give
+the exact same evaluation of the same code, this is not the case for humans and
+math mixed with language.
+
+The lack of a standardized syntax probably stems from the fact that math was
+develop independently by lots of different people who speak different native
+languages. There wasn't a single person or team who constructed math in its
+entirety and proposed it to the world, unlike programming languages.
+
+{{{
+When a mathematician suggests a radical idea is suggested, the first step is to
+convince his fellow mathematicians of his logic. His job is to use currently
+agreed-upon axioms and facts to justify his claim step-by-step. Even then,
+}}}
+
+{{{
+The lack of a standardized syntax probably stems from the fact that math is a
+relatively new technology given how much it is responsible for. Programming
+languages are developed to do a specific task - to get computers to understand
+what we want them to do. As long as it runs, it doesn't really matter if there
+are many weird [quirks](https://jsisweird.com/) or inconsistencies. In this
+sense, the correctness for programming language syntax is not paramount.
+However, for math, being the basis for a lot of other things such as physics,
+chemistry, and even programming languages, if there's a disagreement, a lot of
+things downstream will conflict too. When considering the reach of math, it's
+still very new in its development, but at the same time is required to be
+applied already. This likely lead to different groups of people adopting their
+own style in order to apply it first before others fully agree.
+}}}
+
 }}}
