@@ -28,7 +28,7 @@ const CenteredImage = (props) => {
   }
   return (
     <div style={outer}>
-      <Image {...props} />
+      <Image {...props} alt="Photo" />
     </div>
   )
 }
