@@ -5,18 +5,13 @@ import BlogLayout from '@/layouts/blog';
 import MDXComponents from '@/components/MDXComponents';
 
 export default function Blog({ mdxSource, tweets, frontMatter }) {
-  const StaticTweet = ({ id }) => {
-    const tweet = tweets.find((tweet) => tweet.id === id);
-    return <Tweet {...tweet} />;
-  };
 
   return (
     <BlogLayout frontMatter={frontMatter}>
       <MDXRemote
         {...mdxSource}
         components={{
-          ...MDXComponents,
-          StaticTweet
+          ...MDXComponents
         }}
       />
     </BlogLayout>
