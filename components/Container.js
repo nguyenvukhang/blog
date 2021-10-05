@@ -22,7 +22,7 @@ export default function Container(props) {
     ...customMeta
   };
 
-  const bg = "bg-gray-100 dark:bg-gray-900"
+  const bg = "bg-gray-50 dark:bg-gray-900"
 
   return (
     <div className={bg}>
