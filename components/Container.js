@@ -41,7 +41,7 @@ export default function Container(props) {
           <meta property="article:published_time" content={meta.date} />
         )}
       </Head>
-      <nav className="flex items-center justify-between w-full max-w-4xl px-8 pb-6 pt-4 mx-auto my-0 text-gray-900 md:my-8 dark:text-gray-100">
+      <nav className="flex items-center justify-between w-full max-w-4xl px-8 pb-10 pt-8 mx-auto my-0 text-gray-900 md:my-8 dark:text-gray-100">
         <button
           aria-label="Toggle Dark Mode"
           type="button"

@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Hey, I’m Khang
         </h1>
-        <h2 className="prose text-gray-600 dark:text-gray-400 mb-16 mt-4">
+        <h2 className="prose text-gray-600 dark:text-gray-400 mb-12 mt-4">
           I'm a developer, an athlete, and a university student. I'm currently
           reading an undergraduate degree for mathematics at the National
           Univerisity of Singapore.  You’ve found my personal slice of the
