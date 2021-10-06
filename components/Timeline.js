@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import React from 'react'
+import { TimelineData, FullTimelineData } from '@/data/timeline'
 
 const Divider = () => {
   return (
@@ -38,118 +40,68 @@ const Step = ({ title, children }) => {
   )
 }
 
-const FullTimeline = () => (
-  <>
-    <ul>
-      <Step title="Completed A-Levels">
-        The last peak of academic excellence for a long time.
-      </Step>
-    </ul>
-    <ul>
-      <Step title="Second Half Marathon">
-        Went for my second 21km on the morning before A-Levels Physics practical
-        test: Army Half Marathon 2018.
-      </Step>
-      <Step title="First Half Marathon">
-        Went for my first 21km: Marina Run 2018.
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2013</Year>
-    <ul>
-      <Step title="Started High School">
-        Started secondary education at Hwa Chong Institution, where I joined the
-        canoeing team.
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2010</Year>
-    <ul>
-      <Step title="Moved school">
-        Moved over to Catholic High School (Primary).
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2007</Year>
-    <ul>
-      <Step title="Started school">
-        Started school at Pei Chun Public School.
-      </Step>
-    </ul>
-    <Divider />
-    <Year>2000</Year>
-    <ul>
-      <Step title="Born" />
-    </ul>
-  </>
-)
+function DrawTimeline({ dataset }) {
+  return dataset.map((y, i) => (
+    <React.Fragment key={i}>
+      {y.year ? <Year>{y.year}</Year> : null}
+      <ul>
+        {y.events.map((e, i) => (
+          <Step key={i} title={e.title}>{e.content}</Step>
+        ))}
+      </ul>
+      {i === dataset.length - 1 ? null : <Divider />}
+    </React.Fragment>
+  ))
+}
+
+function ToggleTimeline({ f, s }) {
+  return (
+    <button
+      type="button"
+      className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
+      onClick={() => f(!s)}
+    >
+      {s ? 'See Less' : 'See More'}
+      <svg
+        className="h-4 w-4 ml-1"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        {s ? (
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            // d="M19 9l-7 7-7-7"
+            d="M 19 15 l -7 -7 -7 7"
+          />
+        ) : (
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        )}
+      </svg>
+    </button>
+  )
+}
 
 export default function Timeline() {
   const [isShowingFullTimeline, showFullTimeline] = useState(false)
-
   return (
     <>
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 text-black dark:text-white">
+      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-8 md:mb-10 text-black dark:text-white">
         Timeline
       </h3>
-      <Year>2021</Year>
-      <ul>
-        <Step title="Started University">
-          At the National University of Singapore.
-        </Step>
-        <Step title="Operationally Ready">
-          Completed conscription at Singapore Armed Forces.
-        </Step>
-      </ul>
-      <Divider />
-      <Year>2019</Year>
-      <ul>
-        <Step title="First Marathon">
-          Just after coming back from an overseas exercise in Brunei, I went
-          for my first marathon: Standard Chartered Singapore Marathon. Ran a
-          few km with an old friend Mr Yong Yuen Cheng.
-        </Step>
-        <Step title="Enlisted in the SAF">
-          Became a recruit and bald at the lovely island of Pulau Tekong.
-        </Step>
-        <Step title="Japan Roadtrip">
-          To celebrate graduating, I went on a road trip from Fukuoka, Japan to
-          Tokyo, purposely avoiding the beaten paths and exploring every corner
-          of Japan. An unforgettable experience.
-        </Step>
-      </ul>
-      <Divider />
-      <Year>2018</Year>
-      <ul>
-        <Step title="Graduated JC">
-          End of an era.
-        </Step>
-      </ul>
+      <DrawTimeline dataset={TimelineData} />
       {isShowingFullTimeline ? (
-        <FullTimeline />
-      ) : (
-        <button
-          type="button"
-          className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
-          onClick={() => showFullTimeline(true)}
-        >
-          See More
-          <svg
-            className="h-4 w-4 ml-1"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </button>
-      )}
+        <DrawTimeline dataset={FullTimelineData} />
+      ) : null}
+      <ToggleTimeline f={showFullTimeline} s={isShowingFullTimeline} />
     </>
   )
 }
