@@ -3,9 +3,11 @@ import NextLink from 'next/link'
 
 function NavbarLink({ href, title }) {
   const hover = "hover:bg-gray-200 rounded-lg"
+  const md = " md:px-3 md:py-2 md:mr-2"
+  const sm = " px-1 py-2 mr-2"
   return (
     <NextLink href={href}>
-      <a className={"text-gray-900 sm:px-3 sm:py-2 sm:mr-2 dark:text-gray-100 " + hover}>{title}</a>
+      <a className={"text-gray-900 dark:text-gray-100" + hover + md + sm}>{title}</a>
     </NextLink>
   )
 }
@@ -51,7 +53,7 @@ function Navbar({ mounted }) {
   }
 
   return (
-    <nav className="flex items-center justify-between w-full max-w-2xl pb-10 pt-8 mx-auto my-0 text-gray-900 md:my-8 dark:text-gray-100">
+    <nav className="flex items-center justify-between w-full max-w-2xl md:pb-8 md:pt-6 py-8 md:px-0 pr-8 pl-6 mx-auto text-gray-900 md:mb-6 md:mt-8 my-0 dark:text-gray-100">
       <div>
         <NavbarLink href="/" title="Home" />
         <NavbarLink href="/blog" title="Blog" />

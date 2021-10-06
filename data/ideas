@@ -54,6 +54,7 @@ Getting comfortable in my own skin {{{
 
 My vim journey - part 4 {{{
 (Moving faster within the buffer)
+
 f, F, t, T
 ^, $
 gg, G
