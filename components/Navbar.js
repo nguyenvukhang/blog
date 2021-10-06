@@ -53,7 +53,7 @@ function Navbar({ mounted }) {
   }
 
   return (
-    <nav className="flex items-center justify-between w-full max-w-2xl md:pb-8 md:pt-6 py-8 md:px-0 pr-8 pl-6 mx-auto text-gray-900 md:mb-6 md:mt-8 my-0 dark:text-gray-100">
+    <nav className="flex items-center justify-between w-full max-w-2xl md:pb-8 md:pt-6 py-8 md:px-0 pr-8 pl-7 mx-auto text-gray-900 md:mb-6 md:mt-8 my-0 dark:text-gray-100">
       <div>
         <NavbarLink href="/" title="Home" />
         <NavbarLink href="/blog" title="Blog" />
