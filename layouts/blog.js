@@ -1,7 +1,15 @@
-import Image from 'next/image';
-import { parseISO, format } from 'date-fns';
+import Image from 'next/image'
+import { parseISO, format } from 'date-fns'
 
-import Container from '@/components/Container';
+import Container from '@/components/Container'
+
+function BlogTitle({ children }) {
+  return (
+    <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      {children}
+    </h1>
+  )
+}
 
 export default function BlogLayout({ children, frontMatter }) {
   return (
@@ -12,9 +20,7 @@ export default function BlogLayout({ children, frontMatter }) {
       type="article"
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
-          {frontMatter.title}
-        </h1>
+        <BlogTitle>{frontMatter.title}</BlogTitle>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
           <div className="flex items-center">
             <Image
@@ -39,5 +45,5 @@ export default function BlogLayout({ children, frontMatter }) {
         </div>
       </article>
     </Container>
-  );
+  )
 }
