@@ -14,7 +14,7 @@ export default function Container(props) {
   const { children, ...customMeta } = props
   const router = useRouter()
   const meta = {
-    title: 'Nguyen Vu Khang.',
+    title: 'Khang.',
     description: `Developer, athlete, student`,
     type: 'website',
     ...customMeta
@@ -37,7 +37,7 @@ export default function Container(props) {
           href={`https://nguyenvukhang.com${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Nguyen Vu Khang" />
+        <meta property="og:site_name" content="Khang" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />

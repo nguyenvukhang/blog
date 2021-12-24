@@ -15,7 +15,7 @@ export default function Snippets({ snippets }) {
   snippets.sort(compare)
   return (
     <Container
-      title="Code Snippets – Nguyen Vu Khang"
+      title="Code Snippets – Khang"
       description="A collection of code snippets – including serverless functions, Node.js scripts, and CSS tricks."
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">

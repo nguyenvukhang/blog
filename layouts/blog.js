@@ -14,7 +14,7 @@ function BlogTitle({ children }) {
 export default function BlogLayout({ children, frontMatter }) {
   return (
     <Container
-      title={`${frontMatter.title} – Nguyen Vu Khang`}
+      title={`${frontMatter.title} – Khang`}
       description={frontMatter.summary}
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"
@@ -24,7 +24,7 @@ export default function BlogLayout({ children, frontMatter }) {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2">
           <div className="flex items-center">
             <Image
-              alt="Nguyen Vu Khang"
+              alt="Khang"
               height={24}
               width={24}
               src="/avatar.jpg"
@@ -32,7 +32,7 @@ export default function BlogLayout({ children, frontMatter }) {
             />
             <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
               {frontMatter.by}
-              {'Nguyen Vu Khang / '}
+              {'Khang / '}
               {format(parseISO(frontMatter.publishedAt), 'MMM d, yyyy')}
             </p>
           </div>
