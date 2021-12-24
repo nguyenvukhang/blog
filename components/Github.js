@@ -2,9 +2,9 @@ import githubColors from './github-colors-min.json'
 import { GrBook, VscRepoForked } from '@/components/Icons'
 
 export function Language({ children }) {
+  const l = children?.replace(/(^\w{1})|(\s+\w{1})/g, (w) => w.toUpperCase())
   const LanguageCircle = ({ language }) => {
-    const githubColorStyle = (language) => {
-      const l = language.replace(/(^\w{1})|(\s+\w{1})/g, (w) => w.toUpperCase())
+    const githubColorStyle = (l) => {
       return {
         backgroundColor: githubColors[l]?.color
       }
@@ -22,11 +22,11 @@ export function Language({ children }) {
       <div className="flex flex-row my-2 text-gray-500 dark:text-gray-500 w-full">
         <div className="flex flex-col justify-center">
           <div className="flex">
-            <LanguageCircle language={children} />
+            <LanguageCircle language={l} />
           </div>
         </div>
         <div className="flex flex-col justify-center">
-          <span className="ml-1.5 line-clamp-1">{children}</span>
+          <span className="ml-1.5 line-clamp-1">{l}</span>
         </div>
       </div>
     </>
