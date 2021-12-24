@@ -4,11 +4,8 @@ const TimelineData = [
     events: [
       {
         title: 'Started University',
-        content: ' At the National University of Singapore.'
-      },
-      {
-        title: 'Operationally Ready',
-        content: 'Completed conscription at Singapore Armed Forces.'
+        content: `At the National University of Singapore, Faculty of
+        Science.`
       }
     ]
   },
@@ -17,22 +14,15 @@ const TimelineData = [
     events: [
       {
         title: 'First Marathon',
-        content: `
-          Just after coming back from an overseas exercise in Brunei, I
-          went for my first marathon: Standard Chartered Singapore Marathon.
-          Ran a few km with an old friend Mr Yong Yuen Cheng.`
-      },
-      {
-        title: 'Enlisted in the SAF',
-        content:
-          'Became a recruit and bald at the lovely island of Pulau Tekong.'
+        content: `Just after coming back from an overseas exercise in
+        Brunei, I went for my first marathon: Standard Chartered
+        Singapore Marathon.`
       },
       {
         title: 'Japan Roadtrip',
-        content: `
-          To celebrate graduating, I went on a road trip from Fukuoka, Japan to
-          Tokyo, purposely avoiding the beaten paths and exploring every corner
-          of Japan. An unforgettable experience.`
+        content: `I went on a road trip from Fukuoka, Japan to Tokyo,
+        purposely avoiding the beaten paths and exploring every corner
+        of Japan. An unforgettable experience.`
       }
     ]
   },
@@ -53,17 +43,16 @@ const FullTimelineData = [
     events: [
       {
         title: 'Completed A-Levels',
-        content: 'The last peak of academic excellence for a long time.'
+        content: `The last peak of academic excellence for a long
+        time.`
       },
       {
         title: 'Second Half Marathon',
-        content: `
-          Went for my second 21km on the morning before A-Levels Physics practical
-          test: Army Half Marathon 2018.`
+        content: 'Army Half Marathon 2018.'
       },
       {
         title: 'First Half Marathon',
-        content: 'Went for my first 21km: Marina Run 2018.'
+        content: 'My first 21km: Marina Run 2018.'
       }
     ]
   },
@@ -72,9 +61,8 @@ const FullTimelineData = [
     events: [
       {
         title: 'Started High School',
-        content: `
-          Started secondary education at Hwa Chong Institution, where I joined
-          the canoeing team.`
+        content: `Started secondary education at Hwa Chong
+        Institution, where I joined the canoeing team.`
       }
     ]
   },

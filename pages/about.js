@@ -1,4 +1,5 @@
 import Container from '@/components/Container'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -7,6 +8,9 @@ export default function About() {
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me
         </h1>
+        <div className="flex w-full justify-center">
+          <Image className="rounded-full drop-shadow-lg" src="/hs.png" width={192} height={192} layout="intrinsic" />
+        </div>
         <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
           <p>Hey, I’m Khang. I'm a developer, athlete, and student of math.</p>
           <p>

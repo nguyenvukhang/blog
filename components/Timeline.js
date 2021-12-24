@@ -40,7 +40,7 @@ const Step = ({ title, children }) => {
   )
 }
 
-function DrawTimeline({ dataset }) {
+const DrawTimeline = ({ dataset }) => {
   return dataset.map((y, i) => (
     <React.Fragment key={i}>
       {y.year ? <Year>{y.year}</Year> : null}
@@ -54,7 +54,7 @@ function DrawTimeline({ dataset }) {
   ))
 }
 
-function ToggleTimeline({ f, s }) {
+const ToggleTimeline = ({ f, s }) => {
   return (
     <button
       type="button"
