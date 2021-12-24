@@ -9,7 +9,9 @@ export default function About() {
           About Me
         </h1>
         <div className="flex w-full justify-center">
-          <Image className="rounded-full drop-shadow-lg" src="/hs.png" width={192} height={192} layout="intrinsic" />
+          <div className="drop-shadow-md rounded-full w-48 h-48">
+            <Image className="rounded-full" src="/hs.png" layout="fill" />
+          </div>
         </div>
         <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
           <p>Hey, I’m Khang. I'm a developer, athlete, and student of math.</p>
