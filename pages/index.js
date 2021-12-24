@@ -1,7 +1,9 @@
 import Link from 'next/link'
 
-import Timeline from '../components/Timeline'
-import Container from '../components/Container'
+import Timeline from '@/components/Timeline'
+import Container from '@/components/Container'
+import FeaturedRepos from '@/components/FeaturedRepos'
+
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
             <a>learn more about me.</a>
           </Link>
         </h2>
+        <FeaturedRepos />
         <Timeline />
       </div>
     </Container>
