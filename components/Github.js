@@ -14,12 +14,12 @@ export function Language({ children }) {
       <div
         style={githubColorStyle(language)}
         className="h-3 w-3 drop-shadow-sm rounded-full"
-      ></div>
+      />
     ) : null
   }
   return (
     <>
-      <div className="flex flex-row my-2 text-gray-500 dark:text-gray-500 w-full">
+      <div className="flex flex-row my-2 text-gray-500 dark:text-gray-300 w-full">
         <div className="flex flex-col justify-center">
           <div className="flex">
             <LanguageCircle language={l} />
@@ -36,15 +36,15 @@ export function Language({ children }) {
 export function RepoTitle({ children }) {
   return (
     <>
-      <div className="flex flex-row text-gray-500 dark:text-gray-500">
+      <div className="flex flex-row text-gray-500 dark:text-gray-500 mb-1">
         <div className="flex flex-col justify-center">
           <div className="flex">
-            <GrBook className="text-gray-600" />
+            <GrBook className="text-gray-600 dark:text-gray-300" />
           </div>
         </div>
         <div className="flex flex-col justify-center">
           <div className="flex">
-            <h3 className="text-lg md:text-xl font-semibold tracking-tight text-gray-800 dark:text-gray-100 ml-2">
+            <h3 className="text-lg md:text-xl font-semibold tracking-tight text-gray-800 dark:text-gray-200 ml-3">
               {children}
             </h3>
           </div>
@@ -60,12 +60,12 @@ export function RepoForks({ children }) {
       <div className="flex text-gray-500 dark:text-gray-500">
         <div className="flex flex-col justify-center">
           <div className="flex">
-            <VscRepoForked className="text-gray-600" />
+            <VscRepoForked className="text-gray-600 dark:text-gray-400" />
           </div>
         </div>
         <div className="flex flex-col justify-center">
           <div className="flex">
-            <h3 className="tracking-tight text-gray-600 dark:text-gray-100 ml-1">
+            <h3 className="tracking-tight text-gray-600 dark:text-gray-300 ml-1">
               {children}
             </h3>
           </div>
