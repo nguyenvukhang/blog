@@ -49,10 +49,6 @@ class MyDocument extends Document {
             content="/static/favicons/browserconfig.xml"
             name="msapplication-config"
           />
-          <meta
-            content="ngOcVIiWQCLTWGAiAXFa3-YF2Vl8G2DeH80313PPAmw"
-            name="google-site-verification"
-          />
         </Head>
         <body className="bg-gray-100 dark:bg-gray-900 text-white dark:text-black">
           <Main />
