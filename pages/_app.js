@@ -2,7 +2,6 @@ import '@/styles/global.css'
 import { useEffect } from 'react'
 import { route } from 'next/dist/next-server/server/router'
 import { useRouter } from 'next/router'
-
 import ga from '@/lib/google-analytics'
 
 import { ThemeProvider } from 'next-themes'
