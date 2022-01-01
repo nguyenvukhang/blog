@@ -83,7 +83,15 @@ const inlineCode = ({ children }) => {
   return <code style={style}>{children}</code>
 }
 
+const pre = ({ children }) => {
+  const style = {
+    lineHeight: '1.25em',
+  }
+  return <pre style={style}>{children}</pre>
+}
+
 const MDXComponents = {
+  pre,
   inlineCode,
   Kbd,
   Img,
