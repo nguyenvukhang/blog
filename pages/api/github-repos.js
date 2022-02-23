@@ -1,8 +1,8 @@
 const github_token = process.env.GITHUB_TOKEN
 
 export default async function handler(_, res) {
-  const neovimResponse = await fetch(
-    'https://api.github.com/repos/nguyenvukhang/neovim',
+  const dotsResponse = await fetch(
+    'https://api.github.com/repos/nguyenvukhang/dots',
     {
       method: 'GET',
       headers: {
@@ -10,8 +10,8 @@ export default async function handler(_, res) {
       }
     }
   )
-  const zshResponse = await fetch(
-    'https://api.github.com/repos/nguyenvukhang/zsh',
+  const agsResponse = await fetch(
+    'https://api.github.com/repos/nguyenvukhang/ags',
     {
       method: 'GET',
       headers: {
@@ -20,12 +20,11 @@ export default async function handler(_, res) {
     }
   )
 
-  const neovim = await neovimResponse.json()
-  const zsh = await zshResponse.json()
+  const dots = await dotsResponse.json()
+  const ags = await agsResponse.json()
 
   return res.status(200).json({
-    basereturn: 'hello',
-    neovim,
-    zsh
+    dots,
+    ags
   })
 }
