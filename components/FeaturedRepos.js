@@ -7,7 +7,8 @@ const Repo = ({ data, gradient }) => {
   const className = [
     gradientClass,
     animationClass,
-    'mb-12 basis-1/2 h-42 w-1/2 p-1 rounded-xl cursor-pointer'
+    // p-1 gives the gradient border thickness
+    'h-42 p-1 rounded-xl cursor-pointer'
   ].join(' ')
 
   const router = useRouter()
@@ -20,7 +21,7 @@ const Repo = ({ data, gradient }) => {
   return (
     <div className={className} onClick={handleClick}>
       <div className="featured-repo flex flex-col h-full rounded-lg px-4 py-3 cursor-pointer">
-        <div className="h-full">
+        <div className="h-28">
           <RepoTitle className="mb-1">{data?.name}</RepoTitle>
           <p className="mb-4 line-clamp-2">{data?.description}</p>
         </div>
@@ -33,13 +34,21 @@ const Repo = ({ data, gradient }) => {
   )
 }
 
-const FeaturedRepos = ({ data }) => {
+const FeaturedRepos = ({ data, repos }) => {
+  console.log('got here', repos)
+  const gradients = [
+    ['from-yellow-400', 'to-orange-400'],
+    ['from-lime-400', 'to-teal-400'],
+    ['from-pink-400', 'to-purple-400'],
+    ['from-sky-400', 'to-indigo-400'],
+  ]
   return (
     <>
       <h3 className="mb-6 md:mb-8">Featured Repositories</h3>
-      <div className="flex flex-row w-full gap-x-4">
-        <Repo data={data?.ags} gradient={['from-green-400', 'to-blue-400']} />
-        <Repo data={data?.dots} gradient={['from-yellow-400', 'to-red-400']} />
+      <div className="grid grid-cols-2 w-full gap-4 mb-16">
+        {repos.map((repo, idx) => (
+          <Repo data={data ? data[repo] : null} gradient={gradients[idx]} key={idx} />
+        ))}
       </div>
     </>
   )

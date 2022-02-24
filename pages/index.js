@@ -3,7 +3,10 @@ import Timeline from '@/components/Timeline'
 import Container from '@/components/Container'
 import FeaturedRepos from '@/components/FeaturedRepos'
 
-const pinnedRepos = ['dots', 'ags']
+const pinnedRepos = [
+  'ags',
+  'dots', 'minnesoda', 'blog'
+]
 const github_token = process.env.GITHUB_TOKEN
 
 export async function getServerSideProps() {
@@ -20,10 +23,10 @@ export async function getServerSideProps() {
     (acc, curr) => ((acc[curr.name] = curr), acc),
     {}
   )
-  return { props: { repoData } }
+  return { props: { repoData, pinnedRepos } }
 }
 
-export default function Home({ repoData }) {
+export default function Home({ repoData, pinnedRepos }) {
   return (
     <Container>
       <h1 className='mb-4'>Hey, I'm Khang 👋🏼</h1>
@@ -35,7 +38,7 @@ export default function Home({ repoData }) {
             <a>learn more about me.</a>
           </Link>
         </p>
-        <FeaturedRepos data={repoData} />
+        <FeaturedRepos data={repoData} repos={pinnedRepos} />
         <Timeline />
     </Container>
   )
