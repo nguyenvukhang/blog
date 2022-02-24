@@ -1,4 +1,6 @@
-const TimelineData = [
+import { Timeline } from '@/types/index'
+
+const TimelineData: Timeline = [
   {
     year: 2021,
     events: [
@@ -37,9 +39,9 @@ const TimelineData = [
   }
 ]
 
-const FullTimelineData = [
+const FullTimelineData: Timeline = [
   {
-    // 2018
+    year: 2018,
     events: [
       {
         title: 'Completed A-Levels',
@@ -88,7 +90,8 @@ const FullTimelineData = [
     year: 2000,
     events: [
       {
-        title: 'Born'
+        title: 'Born',
+        content: ''
       }
     ]
   }

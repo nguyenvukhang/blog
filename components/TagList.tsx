@@ -24,7 +24,7 @@ const clearClass = [
 ]
 
 const TagList = ({ allTags, activeTag, setActiveTag }) => {
-  const tagCount = allTags.reduce((obj, e) => {
+  const tagCount = allTags.reduce((obj: Object[], e:string) => {
     obj[e] = (obj[e] || 0) + 1
     return obj
   }, {})

@@ -10,7 +10,6 @@ module.exports = (options) => (tree) => {
       node.children.some((n) => n.type === 'image'),
     (node) => {
       const imageNode = node.children.find((n) => n.type === 'image')
-      console.log(imageNode)
 
       const dimensions = sizeOf(`${process.cwd()}/public${imageNode.url}`)
 

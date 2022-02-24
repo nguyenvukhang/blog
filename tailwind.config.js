@@ -1,5 +1,4 @@
 const { fontFamily, colors } = require('tailwindcss/defaultTheme')
-console.log(colors.gray)
 
 module.exports = {
   mode: 'jit',

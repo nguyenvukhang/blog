@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import ImageWithTheme from '@/components/ImageWithTheme'
-
-const CustomLink = (props) => {
+const CustomLink = (props: { href: string; children: any }) => {
   const href = props.href
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'))
 
@@ -18,7 +16,7 @@ const CustomLink = (props) => {
   }
 }
 
-const CenteredImage = (props) => {
+const CenteredImage = (props: any) => {
   const outer = {
     display: 'flex',
     justifyContent: 'center'
@@ -30,7 +28,7 @@ const CenteredImage = (props) => {
   )
 }
 
-const Img = (props) => {
+const Img = (props: any) => {
   const outer = {
     display: 'flex',
     justifyContent: 'center'
@@ -60,7 +58,7 @@ const Kbd = ({ children }) => {
   return (
     <>
       <kbd style={style}>{parts.shift()}</kbd>
-      {parts.map((d) => (
+      {parts.map((d: string) => (
         <>
           <span style={span}>+</span>
           <kbd style={style}>{d}</kbd>
@@ -91,8 +89,7 @@ const MDXComponents = {
   Img,
   Image,
   CenteredImage,
-  ImageWithTheme,
-  a: CustomLink,
+  a: CustomLink
 }
 
 export default MDXComponents

@@ -7,7 +7,7 @@ export default function Track(track) {
       <div className="flex flex-col pl-3">
         <a
           className="font-medium text-gray-900 dark:text-gray-100 truncate w-60 sm:w-96 md:w-full"
-          href={track.songUrl}
+          href={track.url}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -17,7 +17,7 @@ export default function Track(track) {
           className="text-gray-500 mb-4 truncate w-60 sm:w-96 md:w-full"
           color="gray.500"
         >
-          {track.artist}
+          {track.subtitle}
         </p>
       </div>
     </div>

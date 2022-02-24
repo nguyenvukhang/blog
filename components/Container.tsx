@@ -30,7 +30,7 @@ function Meta({ meta, router }) {
   )
 }
 
-export default function Container(props) {
+export default function Container(props: any) {
   const router = useRouter()
   const [mounted, setMounted] = useState(false)
 

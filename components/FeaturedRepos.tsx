@@ -17,7 +17,7 @@ const Repo = ({ data, gradient }) => {
 
   const router = useRouter()
 
-  const handleClick = (e) => {
+  const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
     router.push(data?.html_url)
   }
@@ -49,7 +49,7 @@ const FeaturedRepos = ({ data, repos }) => {
     <>
       <h3 className="mb-6 md:mb-8">Featured Repositories</h3>
       <div className="grid sm:grid-cols-2 grid-cols-1 w-full gap-4 mb-16">
-        {repos.map((repo, idx) => (
+        {repos.map((repo: string, idx: number) => (
           <Repo data={data ? data[repo] : null} gradient={gradients[idx]} key={repo} />
         ))}
       </div>

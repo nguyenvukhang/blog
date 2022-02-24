@@ -3,14 +3,14 @@ import { GrBook, VscRepoForked } from '@/components/Icons'
 
 export function RepoLanguage({ children }) {
   /* capitalizes first letter of each word */
-  const niceLanguage = children?.replace(/(^\w{1})|(\s+\w{1})/g, (w) =>
+  const niceLanguage = children?.replace(/(^\w{1})|(\s+\w{1})/g, (w: string) =>
     w.toUpperCase()
   )
   const LanguageCircle = ({ language }) => {
     return language ? (
       <div
         style={{ backgroundColor: githubColors[niceLanguage]?.color }}
-        className="h-2.5 w-2.5 rounded-full border"
+        className="h-2.5 w-2.5 rounded-full"
       />
     ) : null
   }

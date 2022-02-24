@@ -1,14 +1,15 @@
 import { useTheme } from 'next-themes'
-import NextLink from 'next/link'
+import Link from '@/components/Link'
+import { LinkProps } from '@/types/index'
 
-function NavbarLink({ href, title }) {
+function NavbarLink({ href, children }: LinkProps) {
   const md = 'md:px-3 md:py-2 md:mx-2'
   const sm = 'sm:px-2 sm:py-2 sm:mx-2'
   const xs = 'px-2 py-2 mx-0'
   return (
-    <NextLink href={href}>
-      <a className={`rounded-lg ${md} ${sm} ${xs}`}>{title}</a>
-    </NextLink>
+    <Link href={href} className={`navbar rounded-lg ${md} ${sm} ${xs}`}>
+      {children}
+    </Link>
   )
 }
 
@@ -59,12 +60,14 @@ function Navbar({ mounted }) {
   const xs = 'px-6 py-8'
   const margin = 'mx-auto my-0'
   return (
-    <nav className={`flex items-center justify-between w-full max-w-2xl ${md} ${sm} ${xs} ${margin}`}>
-      <div className="navbar md:-m-5 sm:-m-4 -m-2">
-        <NavbarLink href="/" title="Home" />
-        <NavbarLink href="/blog" title="Blog" />
-        <NavbarLink href="/photos" title="Photos" />
-        <NavbarLink href="/about" title="About" />
+    <nav
+      className={`flex items-center justify-between w-full max-w-2xl ${md} ${sm} ${xs} ${margin}`}
+    >
+      <div className="md:-m-5 sm:-m-4 -m-2">
+        <NavbarLink href="/">Home</NavbarLink>
+        <NavbarLink href="/blog">Blog</NavbarLink>
+        <NavbarLink href="/photos">Photos</NavbarLink>
+        <NavbarLink href="/about">About</NavbarLink>
       </div>
       <ToggleDarkModeButton themeProps={themeProps} mounted={mounted} />
     </nav>

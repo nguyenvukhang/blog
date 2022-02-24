@@ -25,7 +25,7 @@ const getAccessToken = async () => {
   return response.json()
 }
 
-const spotifyGet = async (endpoint) => {
+const spotifyGet = async (endpoint: string) => {
   const { access_token } = await getAccessToken()
   return fetch(endpoint, {
     headers: { Authorization: `Bearer ${access_token}` }

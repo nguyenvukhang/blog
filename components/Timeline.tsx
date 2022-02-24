@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import React from 'react'
 import { TimelineData, FullTimelineData } from '@/data/timeline'
+import { Timeline } from '@/types/index'
+
+type DrawTimelineType = {
+  dataset: Timeline
+  skip?: number
+}
 
 const Divider = () => {
   return (
@@ -34,36 +40,40 @@ const Step = ({ title, children }) => {
     <li className="mb-4 ml-2">
       <div className="flex items-center mb-2">
         <Checkmark />
-        <p className='font-medium'>{title}</p>
+        <p className="font-medium">{title}</p>
       </div>
       <p className="ml-6">{children}</p>
     </li>
   )
 }
 
-const DrawTimeline = ({ dataset }) => {
-  return dataset.map((y, i) => (
-    <React.Fragment key={i}>
-      {y.year ? <Year>{y.year}</Year> : null}
-      <ul>
-        {y.events.map((e, i) => (
-          <Step key={i} title={e.title}>
-            {e.content}
-          </Step>
-        ))}
-      </ul>
-      {i === dataset.length - 1 ? null : <Divider />}
-    </React.Fragment>
-  ))
+const DrawTimeline = ({ dataset, skip = 0 }: DrawTimelineType) => {
+  return (
+    <>
+      {dataset.map((y, i: number) => (
+        <React.Fragment key={i}>
+          {y.year && skip != y.year ? <Year>{y.year}</Year> : null}
+          <ul>
+            {y.events.map((e, i) => (
+              <Step key={i} title={e.title}>
+                {e.content}
+              </Step>
+            ))}
+          </ul>
+          {i === dataset.length - 1 ? null : <Divider />}
+        </React.Fragment>
+      ))}
+    </>
+  )
 }
 
 const ToggleTimeline = ({ f, s }) => {
-  const buttonMargins = "my-4 mx-auto px-4 py-2"
-  const buttonFlex = "flex items-center"
+  const buttonMargins = 'my-4 mx-auto px-4 py-2'
+  const buttonFlex = 'flex items-center'
   return (
     <button
       type="button"
-      className={`${buttonFlex} ${buttonMargins} text-sm rounded-lg hover:bg-gray-200`}
+      className={`${buttonFlex} ${buttonMargins} text-sm rounded-lg navbar`}
       onClick={() => f(!s)}
     >
       {s ? 'See Less' : 'See More'}
@@ -95,14 +105,14 @@ const ToggleTimeline = ({ f, s }) => {
   )
 }
 
-export default function Timeline() {
+export default function TimelineComponent() {
   const [isShowingFullTimeline, showFullTimeline] = useState(false)
   return (
     <>
       <h3 className="mb-8 md:mb-10">Timeline</h3>
       <DrawTimeline dataset={TimelineData} />
       {isShowingFullTimeline ? (
-        <DrawTimeline dataset={FullTimelineData} />
+        <DrawTimeline dataset={FullTimelineData} skip={2018} />
       ) : null}
       <ToggleTimeline f={showFullTimeline} s={isShowingFullTimeline} />
     </>
