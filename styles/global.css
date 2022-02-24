@@ -31,7 +31,10 @@ html {
   @apply text-black dark:text-white;
 }
 
-/* standard html tags */
+/* standard html tags.
+ * put sizes and colors here.
+ * no margins or paddings - keep those local.
+ */
 
 h1,
 h2,
@@ -43,11 +46,7 @@ h6 {
 }
 
 h1 {
-  @apply text-3xl md:text-5xl mb-4;
-}
-
-p {
-  @apply prose text-gray-600 dark:text-gray-400 mb-12 mt-4;
+  @apply text-3xl md:text-5xl;
 }
 
 a {

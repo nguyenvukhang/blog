@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import Step from '@/components/Step'
 import ImageWithTheme from '@/components/ImageWithTheme'
 
 const CustomLink = (props) => {
@@ -94,7 +93,6 @@ const MDXComponents = {
   CenteredImage,
   ImageWithTheme,
   a: CustomLink,
-  Step
 }
 
 export default MDXComponents
