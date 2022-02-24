@@ -1,9 +1,33 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+
+function Meta({ meta }) {
+  return (
+    <>
+      <meta name="robots" content="follow, index" />
+      <meta content={meta.description} name="description" />
+      <meta
+        property="og:url"
+        content={`https://nguyenvukhang.com${router.asPath}`}
+      />
+      <link
+        rel="canonical"
+        href={`https://nguyenvukhang.com${router.asPath}`}
+      />
+      <meta property="og:type" content={meta.type} />
+      <meta property="og:site_name" content="Khang" />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:image" content={meta.image} />
+      {meta.date && (
+        <meta property="article:published_time" content={meta.date} />
+      )}
+    </>
+  )
+}
 
 export default function Container(props) {
   const [mounted, setMounted] = useState(false)
@@ -12,7 +36,6 @@ export default function Container(props) {
   useEffect(() => setMounted(true), [])
 
   const { children, ...customMeta } = props
-  const router = useRouter()
   const meta = {
     title: 'Khang.',
     description: `Developer, athlete, student`,
@@ -26,27 +49,12 @@ export default function Container(props) {
     <div className={bg}>
       <Head>
         <title>{meta.title}</title>
-        <meta name="robots" content="follow, index" />
-        <meta content={meta.description} name="description" />
-        <meta
-          property="og:url"
-          content={`https://nguyenvukhang.com${router.asPath}`}
-        />
-        <link
-          rel="canonical"
-          href={`https://nguyenvukhang.com${router.asPath}`}
-        />
-        <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="Khang" />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:image" content={meta.image} />
-        {meta.date && (
-          <meta property="article:published_time" content={meta.date} />
-        )}
+        <Meta meta={meta} />
       </Head>
       <Navbar mounted={mounted} />
-      <main className={`contained flex flex-col justify-center max-w-2xl mx-auto ${bg}`}>
+      <main
+        className={`contained flex flex-col justify-center max-w-2xl mx-auto ${bg}`}
+      >
         {children}
         <Footer />
       </main>
