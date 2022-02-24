@@ -46,7 +46,7 @@ export default function Container(props) {
         )}
       </Head>
       <Navbar mounted={mounted} />
-      <main id="skip" className={'flex flex-col justify-center px-8 ' + bg}>
+      <main className={'contained flex flex-col justify-center px-8 ' + bg}>
         {children}
         <Footer />
       </main>
