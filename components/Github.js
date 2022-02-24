@@ -65,9 +65,9 @@ export function RepoForks({ children }) {
         </div>
         <div className="flex flex-col justify-center">
           <div className="flex">
-            <h3 className="tracking-tight text-gray-600 dark:text-gray-300 ml-1">
+            <div className="tracking-tight text-gray-600 dark:text-gray-300 ml-1">
               {children}
-            </h3>
+            </div>
           </div>
         </div>
       </div>

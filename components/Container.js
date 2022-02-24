@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react'
 
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { useRouter } from 'next/router'
 
-function Meta({ meta }) {
+function Meta({ meta, router }) {
   return (
     <>
       <meta name="robots" content="follow, index" />
@@ -30,6 +31,7 @@ function Meta({ meta }) {
 }
 
 export default function Container(props) {
+  const router = useRouter()
   const [mounted, setMounted] = useState(false)
 
   // After mounting, we have access to the theme
@@ -49,7 +51,7 @@ export default function Container(props) {
     <div className={bg}>
       <Head>
         <title>{meta.title}</title>
-        <Meta meta={meta} />
+        <Meta meta={meta} router={router} />
       </Head>
       <Navbar mounted={mounted} />
       <main
