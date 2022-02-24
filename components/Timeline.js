@@ -8,13 +8,7 @@ const Divider = () => {
   )
 }
 
-const Year = ({ children }) => {
-  return (
-    <h3 className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
-      {children}
-    </h3>
-  )
-}
+const Year = ({ children }) => <h4 className="mb-4">{children}</h4>
 
 const Checkmark = () => {
   return (
@@ -64,10 +58,12 @@ const DrawTimeline = ({ dataset }) => {
 }
 
 const ToggleTimeline = ({ f, s }) => {
+  const buttonMargins = "my-4 mx-auto px-4 py-2"
+  const buttonFlex = "flex items-center"
   return (
     <button
       type="button"
-      className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
+      className={`${buttonFlex} ${buttonMargins} text-sm rounded-lg hover:bg-gray-200`}
       onClick={() => f(!s)}
     >
       {s ? 'See Less' : 'See More'}
@@ -103,9 +99,7 @@ export default function Timeline() {
   const [isShowingFullTimeline, showFullTimeline] = useState(false)
   return (
     <>
-      <h3 className="mb-8 md:mb-10">
-        Timeline
-      </h3>
+      <h3 className="mb-8 md:mb-10">Timeline</h3>
       <DrawTimeline dataset={TimelineData} />
       {isShowingFullTimeline ? (
         <DrawTimeline dataset={FullTimelineData} />
