@@ -11,6 +11,7 @@ export default function About() {
         <div className="flex w-full justify-center">
           <div className="drop-shadow-md rounded-full w-48 h-48">
             <Image
+              alt="profile-picture"
               className="rounded-full"
               src="/hs.png"
               width={240}
