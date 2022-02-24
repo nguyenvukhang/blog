@@ -50,7 +50,7 @@ h1 {
 }
 
 p {
-  @apply text-gray-600 dark:text-gray-400;
+  @apply prose text-gray-600 dark:text-gray-400;
 }
 
 a {
