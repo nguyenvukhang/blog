@@ -36,19 +36,11 @@ export function Language({ children }) {
 export function RepoTitle({ children }) {
   return (
     <>
-      <div className="flex flex-row text-gray-500 dark:text-gray-500 mb-1">
-        <div className="flex flex-col justify-center">
-          <div className="flex">
-            <GrBook className="text-gray-600 dark:text-gray-300" />
-          </div>
-        </div>
-        <div className="flex flex-col justify-center">
-          <div className="flex">
-            <h3 className="text-lg md:text-xl font-semibold tracking-tight text-gray-800 dark:text-gray-200 ml-3">
-              {children}
-            </h3>
-          </div>
-        </div>
+      <div className="flex flex-row mb-1 items-center">
+        <GrBook className="text-gray-600 dark:text-gray-300" />
+        <h4 className="font-semibold ml-3">
+          {children}
+        </h4>
       </div>
     </>
   )

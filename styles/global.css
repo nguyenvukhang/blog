@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&family=Readex+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&family=Readex+Pro&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -54,7 +54,7 @@ h3 {
 }
 
 h4 {
-  @apply text-lg md:text-xl;
+  @apply font-semibold text-lg md:text-xl;
 }
 
 p {

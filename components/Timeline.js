@@ -34,7 +34,7 @@ const Step = ({ title, children }) => {
     <li className="mb-4 ml-2">
       <div className="flex items-center mb-2">
         <Checkmark />
-        <p>{title}</p>
+        <p className='font-medium'>{title}</p>
       </div>
       <p className="ml-6">{children}</p>
     </li>
