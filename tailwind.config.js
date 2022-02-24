@@ -6,6 +6,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        black: '#111111'
+      },
       fontFamily: {
         sans: ['Inter', ...fontFamily.sans],
         mono: ['JetBrains Mono', ...fontFamily.mono]
