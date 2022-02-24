@@ -14,9 +14,9 @@ const CustomLink = (props) => {
         <a {...props}>{props.children}</a>
       </Link>
     )
+  } else {
+    return <a target="_blank" rel="noopener noreferrer" {...props} />
   }
-
-  return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
 const CenteredImage = (props) => {
