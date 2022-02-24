@@ -2,12 +2,11 @@ import { useTheme } from 'next-themes'
 import NextLink from 'next/link'
 
 function NavbarLink({ href, title }) {
-  const hover = ' hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg'
-  const md = ' md:px-3 md:py-2 md:mr-2'
-  const sm = ' px-1 py-2 mr-2'
+  const md = 'md:px-3 md:py-2 md:mr-2'
+  const sm = 'px-1 py-2 mr-2'
   return (
     <NextLink href={href}>
-      <a className={'text-gray-900 dark:text-gray-100' + hover + md + sm}>
+      <a className={`rounded-lg ${md} ${sm}`}>
         {title}
       </a>
     </NextLink>
@@ -56,7 +55,7 @@ function Navbar({ mounted }) {
 
   return (
     <nav className="flex items-center justify-between w-full max-w-2xl md:pb-8 md:pt-6 py-8 md:px-0 pr-8 pl-7 mx-auto text-gray-900 md:mb-6 md:mt-8 my-0 dark:text-gray-100">
-      <div>
+      <div class='navbar'>
         <NavbarLink href="/" title="Home" />
         <NavbarLink href="/blog" title="Blog" />
         <NavbarLink href="/photos" title="Photos" />
