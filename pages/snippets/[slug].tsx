@@ -25,7 +25,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const snippet = await getFileBySlug('snippets', params.slug)
+  const req = {
+    type: 'snippets',
+    slug: params.slug
+  }
+  const snippet = await getFileBySlug(req)
 
   return { props: snippet }
 }

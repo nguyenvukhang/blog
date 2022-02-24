@@ -16,20 +16,24 @@ type TopList = Array<{
 
 function TopTracks() {
   const tracks: TopList = useSWR('/api/spotify?type=top-tracks', fetcher).data
-  return tracks
-    ? tracks.map((track, index) => (
+  return tracks ? (
+    <>
+      {tracks.map((track, index) => (
         <Track ranking={index + 1} key={index} {...track} />
-      ))
-    : null
+      ))}
+    </>
+  ) : null
 }
 
 function TopArtists() {
   const artists: TopList = useSWR('/api/spotify?type=top-artists', fetcher).data
-  return artists
-    ? artists.map((artist, index) => (
+  return artists ? (
+    <>
+      {artists.map((artist, index) => (
         <Track ranking={index + 1} key={index} {...artist} />
-      ))
-    : null
+      ))}
+    </>
+  ) : null
 }
 
 function NowPlaying() {
@@ -39,7 +43,9 @@ function NowPlaying() {
       <GrSpotify color="#1ED760" />
       <div className="flex items-center sm:flex-row w-full max-w-full truncate">
         {nowPlaying.songUrl ? (
-          <Link className="paragraph no-underline" href={nowPlaying.songUrl}>{nowPlaying.title}</Link>
+          <Link className="paragraph no-underline" href={nowPlaying.songUrl}>
+            {nowPlaying.title}
+          </Link>
         ) : (
           <p>Not Playing</p>
         )}
