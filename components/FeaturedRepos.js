@@ -3,12 +3,20 @@ import fetcher from '@/lib/fetcher'
 import { RepoTitle, RepoForks, Language } from '@/components/Github'
 import { useRouter } from 'next/router'
 
+const getGradient = (gradient) => {
+  const a = gradient[0]
+  const b = gradient[1]
+  return `bg-gradient-to-r ${a} ${b}`
+}
+
 const Repo = ({ data, gradient }) => {
-  var mainClass =
-    'drop-shadow-sm hover:drop-shadow-md ease-in duration-100 mb-12 basis-1/2 h-42 w-1/2 p-1 rounded-xl bg-gradient-to-r cursor-pointer ' +
-    gradient[0] +
-    ' ' +
-    gradient[1]
+  const gradientClass = getGradient(gradient)
+  const animationClass = "ease-in duration-100"
+  const className = [
+    gradientClass,
+    animationClass,
+    "mb-12 basis-1/2 h-42 w-1/2 p-1 rounded-xl cursor-pointer"
+  ].join(' ')
 
   const router = useRouter()
 
@@ -18,7 +26,7 @@ const Repo = ({ data, gradient }) => {
   }
 
   return (
-    <div className={mainClass} onClick={handleClick}>
+    <div className={className} onClick={handleClick}>
       <div className="bg-gray-50 dark:bg-gray-800 h-full rounded-lg py-3 px-4 flex flex-col hover:bg-gray-50/80 dark:hover:bg-gray-800/80 cursor-pointer">
         <div className="h-full">
           <RepoTitle>{data?.name}</RepoTitle>
@@ -37,8 +45,7 @@ const Repo = ({ data, gradient }) => {
   )
 }
 
-const FeaturedRepos = () => {
-  const { data } = useSWR('/api/github-repos', fetcher)
+const FeaturedRepos = ({data}) => {
   return (
     <>
       <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-6 md:mb-8 text-black dark:text-white">

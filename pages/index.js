@@ -1,10 +1,29 @@
 import Link from 'next/link'
-
 import Timeline from '@/components/Timeline'
 import Container from '@/components/Container'
 import FeaturedRepos from '@/components/FeaturedRepos'
 
-export default function Home() {
+const pinnedRepos = ['dots', 'ags']
+const github_token = process.env.GITHUB_TOKEN
+
+export async function getServerSideProps() {
+  const urls = pinnedRepos.map(
+    (repo) => `https://api.github.com/repos/nguyenvukhang/${repo}`
+  )
+  const requests = urls.map((url) =>
+    fetch(url, {
+      method: 'GET',
+      headers: { Authorization: `token ${github_token}` }
+    }).then((res) => res.json())
+  )
+  const repoData = (await Promise.all(requests)).reduce(
+    (acc, curr) => ((acc[curr.name] = curr), acc),
+    {}
+  )
+  return { props: { repoData } }
+}
+
+export default function Home({ repoData }) {
   return (
     <Container>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
@@ -19,7 +38,7 @@ export default function Home() {
             <a>learn more about me.</a>
           </Link>
         </h2>
-        <FeaturedRepos />
+        <FeaturedRepos data={repoData} />
         <Timeline />
       </div>
     </Container>
