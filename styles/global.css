@@ -28,7 +28,7 @@ html {
 }
 
 .contained {
-  @apply text-black dark:text-white;
+  @apply text-black dark:text-white leading-5;
 }
 
 /* standard html tags.
