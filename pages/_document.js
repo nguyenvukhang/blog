@@ -1,48 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-function GoogleAnalytics() {
-  const gami = process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID
-  return (
-    <>
-      <script
-        async
-        src={`https://www.googletagmanager.com/gtag/js?id=${gami}`}
-      />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${gami}', {
-          page_path: window.location.pathname,
-          });`
-        }}
-      />
-    </>
-  )
-}
-
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
-          <GoogleAnalytics />
-          <link
-            rel="preload"
-            href="/fonts/inter-var-latin.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="preload"
-            href="/fonts/JetBrainsMono-Regular.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
-          />
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link href="/static/favicons/site.webmanifest" rel="manifest" />
           <link
