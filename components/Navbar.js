@@ -2,8 +2,8 @@ import { useTheme } from 'next-themes'
 import NextLink from 'next/link'
 
 function NavbarLink({ href, title }) {
-  const md = 'md:px-3 md:py-2 md:mr-2'
-  const sm = 'px-1 py-2 mr-2'
+  const md = 'md:px-3 md:py-2 md:mx-2'
+  const sm = 'px-1 py-2 mx-2'
   return (
     <NextLink href={href}>
       <a className={`rounded-lg ${md} ${sm}`}>{title}</a>
@@ -53,10 +53,12 @@ function ToggleDarkModeButton({ themeProps, mounted }) {
 
 function Navbar({ mounted }) {
   const themeProps = useTheme()
-
+  const md = 'md:mt-8 md:pb-8 md:pt-6 md:px-0 md:mb-6'
+  const padding = 'py-8 pr-8 pl-7'
+  const margin = 'mx-auto my-0'
   return (
-    <nav className="flex items-center justify-between w-full max-w-2xl md:pb-8 md:pt-6 py-8 md:px-0 pr-8 pl-7 mx-auto text-gray-900 md:mb-6 md:mt-8 my-0 dark:text-gray-100">
-      <div className="navbar">
+    <nav className={`flex items-center justify-between w-full max-w-2xl ${padding} ${margin} ${md}`}>
+      <div className="navbar md:-m-5 -m-3">
         <NavbarLink href="/" title="Home" />
         <NavbarLink href="/blog" title="Blog" />
         <NavbarLink href="/photos" title="Photos" />

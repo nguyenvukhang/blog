@@ -3,10 +3,7 @@ import Timeline from '@/components/Timeline'
 import Container from '@/components/Container'
 import FeaturedRepos from '@/components/FeaturedRepos'
 
-const pinnedRepos = [
-  'ags',
-  'dots', 'minnesoda', 'blog'
-]
+const pinnedRepos = [ 'ags', 'dots', 'minnesoda', 'blog' ]
 const github_token = process.env.GITHUB_TOKEN
 
 export async function getServerSideProps() {
