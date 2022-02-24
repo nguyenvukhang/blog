@@ -1,6 +1,4 @@
-import useSWR from 'swr'
-import fetcher from '@/lib/fetcher'
-import { RepoTitle, RepoForks, Language } from '@/components/Github'
+import { RepoTitle, RepoForks, RepoLanguage } from '@/components/Github'
 import { useRouter } from 'next/router'
 
 const getGradient = (gradient) => {
@@ -36,7 +34,7 @@ const Repo = ({ data, gradient }) => {
         </div>
         <div className="">
           <div className="flex flex-row">
-            <Language>{data?.language}</Language>
+            <RepoLanguage>{data?.language}</RepoLanguage>
             <RepoForks>{data?.forks_count}</RepoForks>
           </div>
         </div>

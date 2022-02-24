@@ -1,7 +1,7 @@
 import githubColors from './github-colors-min.json'
 import { GrBook, VscRepoForked } from '@/components/Icons'
 
-export function Language({ children }) {
+export function RepoLanguage({ children }) {
   const l = children?.replace(/(^\w{1})|(\s+\w{1})/g, (w) => w.toUpperCase())
   const LanguageCircle = ({ language }) => {
     const githubColorStyle = (l) => {
