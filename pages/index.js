@@ -26,8 +26,7 @@ export async function getServerSideProps() {
 export default function Home({ repoData }) {
   return (
     <Container>
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className='mb-4'>Hey, I'm Khang 👋🏼</h1>
+      <h1 className='mb-4'>Hey, I'm Khang 👋</h1>
         <p className="mb-12 mt-4">
           I'm an efficiency junkie who also happens to write code and do sports.
           I love using vim and I believe that it's too fast to afford not to
@@ -38,7 +37,6 @@ export default function Home({ repoData }) {
         </p>
         <FeaturedRepos data={repoData} />
         <Timeline />
-      </div>
     </Container>
   )
 }

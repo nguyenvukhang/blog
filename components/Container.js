@@ -46,7 +46,7 @@ export default function Container(props) {
         )}
       </Head>
       <Navbar mounted={mounted} />
-      <main className={'contained flex flex-col justify-center px-8 ' + bg}>
+      <main className={`contained flex flex-col justify-center max-w-2xl mx-auto ${bg}`}>
         {children}
         <Footer />
       </main>
