@@ -1,6 +1,5 @@
 import Container from '@/components/Container'
-import TopTracks from '@/components/TopTracks'
-import TopArtists from '@/components/TopArtists'
+import { TopTracks, TopArtists } from '@/components/SpotifyComponents'
 
 export default function Music() {
   return (

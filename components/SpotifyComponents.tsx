@@ -1,9 +1,26 @@
 import useSWR from 'swr'
-
 import fetcher from '@/lib/fetcher'
+import Track from '@/components/Track'
 
-export default function NowPlaying() {
-  const { data } = useSWR('/api/now-playing', fetcher)
+function TopTracks() {
+  const { data } = useSWR('/api/spotify?type=top-tracks', fetcher)
+  if (!data) { return null }
+  return data.map((track, index) => (
+    <Track ranking={index + 1} key={track.songUrl} {...track} />
+  ))
+}
+
+function TopArtists() {
+  const { data } = useSWR('/api/spotify?type=top-artists', fetcher)
+  if (!data) { return null }
+  return data.map((artist, index) => (
+    <Track ranking={index + 1} key={artist.songUrl} {...artist} />
+  ))
+}
+
+function NowPlaying() {
+  const { data } = useSWR('/api/spotify?type=now-playing', fetcher)
+  if (!data) { return null }
   return (
     <div className="flex flex-row-reverse sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
       <svg className="h-4 w-4 ml-auto mt-1" viewBox="0 0 168 168">
@@ -37,3 +54,5 @@ export default function NowPlaying() {
     </div>
   )
 }
+
+export { TopTracks, TopArtists, NowPlaying }

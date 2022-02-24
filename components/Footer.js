@@ -1,5 +1,5 @@
 import NextLink from 'next/link'
-import NowPlaying from '@/components/NowPlaying'
+import { NowPlaying } from '@/components/SpotifyComponents'
 
 const basicPages = {
   Home: '/',
