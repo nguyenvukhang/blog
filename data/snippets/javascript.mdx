@@ -3,13 +3,14 @@ title: 'Javascript'
 description: 'NaN === NaN is false'
 ---
 
-* [Convert Excel array to an array of objects](#convert-excel-array-to-an-array-of-objects)
-* [Check if object is empty](#check-if-object-is-empty)
-* [Remove last character of a string](#remove-last-character-of-a-string)
+- [Convert Excel array to an array of objects](#convert-excel-array-to-an-array-of-objects)
+- [Check if object is empty](#check-if-object-is-empty)
+- [Remove last character of a string](#remove-last-character-of-a-string)
 
 ## Convert Excel array to an array of objects
 
 An example input is:
+
 ```js
 data = [
   ['Name', 'Gender', 'Year'],
@@ -18,7 +19,9 @@ data = [
   ['Calista', 'F', '2000']
 ]
 ```
+
 And the desired output is:
+
 ```js
 result = [
   { Name: 'Jacob', Gender: 'M', Year: '1996' },
@@ -26,15 +29,18 @@ result = [
   { Name: 'Calista', Gender: 'F', Year: '2000' }
 ]
 ```
+
 Here's how I did it:
+
 ```js
 const headers = data.shift()
-const result = data.map((person) => 
+const result = data.map((person) =>
   headers.reduce(
     (obj, key, index) => ({
       ...obj,
       [key]: person[index]
-    }), {}
+    }),
+    {}
   )
 )
 ```
@@ -42,28 +48,31 @@ const result = data.map((person) =>
 ## Check if object is empty
 
 ```js
-const empty = {};
+const empty = {}
 
-JSON.stringify(empty) === "{}"
+JSON.stringify(empty) === '{}'
 // true
 ```
 
 ## Remove last character of a string
 
 ```js
-let str = "12345.00";
-str = str.slice(0, -1); 
-console.log(str);
+let str = '12345.00'
+str = str.slice(0, -1)
+console.log(str)
 // 12345.0
 ```
 
 ## Count occurences in an array and output it to an object
 
 An example input is:
+
 ```js
-['a', 'c', 'b', 'c', 'b', 'a', 'd']
+;['a', 'c', 'b', 'c', 'b', 'a', 'd']
 ```
+
 And the desired output is:
+
 ```js
 {
   a: 2,
@@ -72,7 +81,9 @@ And the desired output is:
   d: 1,
 }
 ```
+
 Here's how I did it:
+
 ```js
 const count = arr.reduce((obj, e) => {
   obj[e] = (obj[e] || 0) + 1

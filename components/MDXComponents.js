@@ -38,12 +38,7 @@ const Img = (props) => {
   }
   return (
     <div style={outer}>
-      <Image
-        {...props}
-        alt="Photo"
-        priority
-        className="next-image"
-      />
+      <Image {...props} alt="Photo" priority className="next-image" />
     </div>
   )
 }
@@ -85,7 +80,7 @@ const inlineCode = ({ children }) => {
 
 const pre = ({ children }) => {
   const style = {
-    lineHeight: '1.25em',
+    lineHeight: '1.25em'
   }
   return <pre style={style}>{children}</pre>
 }

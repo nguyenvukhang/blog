@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import NowPlaying from '@/components/NowPlaying';
+import NowPlaying from '@/components/NowPlaying'
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -11,7 +11,7 @@ const ExternalLink = ({ href, children }) => (
   >
     {children}
   </a>
-);
+)
 
 export default function Footer() {
   return (
@@ -30,13 +30,21 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
-          <ExternalLink href="https://instagram.com/nvkse">Instagram</ExternalLink>
-          <ExternalLink href="https://github.com/nguyenvukhang">GitHub</ExternalLink>
-          <ExternalLink href="https://soundcloud.com/nguyenvukhang">SoundCloud</ExternalLink>
+          <ExternalLink href="https://instagram.com/nvkse">
+            Instagram
+          </ExternalLink>
+          <ExternalLink href="https://github.com/nguyenvukhang">
+            GitHub
+          </ExternalLink>
+          <ExternalLink href="https://soundcloud.com/nguyenvukhang">
+            SoundCloud
+          </ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
           <Link href="/music">
-            <a className="text-gray-500 hover:text-gray-600 transition">Music</a>
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Music
+            </a>
           </Link>
           <Link href="/uses">
             <a className="text-gray-500 hover:text-gray-600 transition">Uses</a>
@@ -47,10 +55,12 @@ export default function Footer() {
             </a>
           </Link>
           <Link href="/books">
-            <a className="text-gray-500 hover:text-gray-600 transition">Books</a>
+            <a className="text-gray-500 hover:text-gray-600 transition">
+              Books
+            </a>
           </Link>
         </div>
       </div>
     </footer>
-  );
+  )
 }

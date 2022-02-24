@@ -1,12 +1,7 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from 'next/link'
+import Image from 'next/image'
 
-export default function FunctionCard({
-  title,
-  description,
-  slug,
-  ...rest
-}) {
+export default function FunctionCard({ title, description, slug, ...rest }) {
   return (
     <Link href={`/snippets/${slug}`}>
       <a
@@ -19,5 +14,5 @@ export default function FunctionCard({
         <p className="mt-1 text-gray-700 dark:text-gray-400">{description}</p>
       </a>
     </Link>
-  );
+  )
 }

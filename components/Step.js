@@ -6,5 +6,5 @@ export default function Step({ number, title }) {
       </div>
       <h3 className="ml-3 tracking-tight font-bold">{title}</h3>
     </div>
-  );
+  )
 }

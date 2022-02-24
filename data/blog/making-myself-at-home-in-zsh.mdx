@@ -1,7 +1,7 @@
 ---
-title: "Making zsh feel like home"
+title: 'Making zsh feel like home'
 publishedAt: '2021-09-23'
-summary: "Slipping and sliding in the command line"
+summary: 'Slipping and sliding in the command line'
 tags: [shell]
 ---
 
@@ -11,7 +11,7 @@ The thing that greets you when you open the terminal is the shell.
 % █
 ```
 
-macOS used to ship with [bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+macOS used to ship with [bash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>)
 as the default shell, until in [WWDC
 2019](https://www.theverge.com/2019/6/4/18651872/apple-macos-catalina-zsh-bash-shell-replacement-features)
 it was announced that [zsh](https://en.wikipedia.org/wiki/Z_shell) will replace
@@ -19,10 +19,10 @@ it as the default shell.
 
 The following snippets can either be placed inside `~/.zshrc` or be ran directly
 in the z shell as commands. If you edit `~/.zshrc`, for changes to take effect
-you need to either exit and reopen the terminal, or run the command `source
-~/.zshrc`.
+you need to either exit and reopen the terminal, or run the command `source ~/.zshrc`.
 
 # Aliases
+
 For things you find yourself typing all the time.
 
 ```bash
@@ -60,11 +60,12 @@ function p() {
   echo $1
 }
 ```
+
 The number denotes the order of the argument given. `$1` will refer to the first
 argument, `$2` will refer to the second, and so on.
 
 So if you were to run the command `p helloworld`, zsh will print out
-`helloworld`, as if you typed in `echo helloworld`. 
+`helloworld`, as if you typed in `echo helloworld`.
 
 With functions you can also bring in logic like if-else statements, for example:
 
@@ -80,7 +81,7 @@ function gcm() {
 
 # Environment variables
 
-Variables are called by pre-pending the `$` symbol. 
+Variables are called by pre-pending the `$` symbol.
 
 ```
 FOO="bar"
@@ -115,7 +116,7 @@ into multiple files.
 
 I do it by putting this into my `~/.zshrc`:
 
-```bash 
+```bash
 ZSH_DOTS="$HOME/repos/zsh"
 sourceDirs=()
 [ `uname` = "Linux" ] && sourceDirs+=(linux)

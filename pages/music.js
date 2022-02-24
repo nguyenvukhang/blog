@@ -1,6 +1,6 @@
-import Container from '@/components/Container';
-import TopTracks from '@/components/TopTracks';
-import TopArtists from '@/components/TopArtists';
+import Container from '@/components/Container'
+import TopTracks from '@/components/TopTracks'
+import TopArtists from '@/components/TopArtists'
 
 export default function Music() {
   return (
@@ -14,8 +14,8 @@ export default function Music() {
         </h1>
         <div className="mb-8">
           <p className="text-gray-600 dark:text-gray-400 mb-0">
-            A look into my music, built with Next.js API routes
-            deployed as serverless functions. 
+            A look into my music, built with Next.js API routes deployed as
+            serverless functions.
           </p>
         </div>
         <h2 className="font-bold text-3xl tracking-tight mb-4 mt-8 text-black dark:text-white">
@@ -28,5 +28,5 @@ export default function Music() {
         <TopArtists />
       </div>
     </Container>
-  );
+  )
 }

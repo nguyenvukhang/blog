@@ -46,7 +46,9 @@ const DrawTimeline = ({ dataset }) => {
       {y.year ? <Year>{y.year}</Year> : null}
       <ul>
         {y.events.map((e, i) => (
-          <Step key={i} title={e.title}>{e.content}</Step>
+          <Step key={i} title={e.title}>
+            {e.content}
+          </Step>
         ))}
       </ul>
       {i === dataset.length - 1 ? null : <Divider />}

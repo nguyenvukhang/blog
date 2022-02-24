@@ -15,12 +15,12 @@ module.exports = {
         source: '/(.*)',
         headers: securityHeaders
       }
-    ];
+    ]
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
-      require('./scripts/generate-sitemap');
-      require('./scripts/generate-rss');
+      require('./scripts/generate-sitemap')
+      require('./scripts/generate-rss')
     }
 
     // Replace React with Preact only in client production build
@@ -29,12 +29,12 @@ module.exports = {
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat'
-      });
+      })
     }
 
-    return config;
+    return config
   }
-};
+}
 
 // https://securityheaders.com
 const ContentSecurityPolicy = `
@@ -46,7 +46,7 @@ const ContentSecurityPolicy = `
   media-src 'none';
   connect-src *;
   font-src 'self';
-`;
+`
 
 const securityHeaders = [
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
@@ -85,4 +85,4 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
   }
-];
+]

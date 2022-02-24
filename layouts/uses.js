@@ -1,4 +1,4 @@
-import Container from '@/components/Container';
+import Container from '@/components/Container'
 
 export default function UsesLayout({ children }) {
   return (
@@ -16,5 +16,5 @@ export default function UsesLayout({ children }) {
         <div className="prose dark:prose-dark w-full">{children}</div>
       </article>
     </Container>
-  );
+  )
 }

@@ -4,7 +4,6 @@ import Timeline from '@/components/Timeline'
 import Container from '@/components/Container'
 import FeaturedRepos from '@/components/FeaturedRepos'
 
-
 export default function Home() {
   return (
     <Container>

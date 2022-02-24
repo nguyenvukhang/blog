@@ -1,7 +1,7 @@
 ---
-title: "Your first vimrc"
+title: 'Your first vimrc'
 publishedAt: '2021-08-04'
-summary: "Simple settings to kick start your journey with vim"
+summary: 'Simple settings to kick start your journey with vim'
 tags: [vim]
 ---
 
@@ -19,18 +19,19 @@ This is my [vimrc](https://github.com/nguyenvukhang/neovim/blob/master/init.vim)
 5. [Undo](#undo)
 6. [Others](#others)
 
-
 ### Tab length
+
 ```
 set tabstop=2
 set softtabstop=2
 set expandtab
 set shiftwidth=2
 ```
+
 The default tab length in vim is 8. Yes, 8. That can be a little rough, so I prefer to set it to just 2. Some people prefer 4 but I feel that it eats up my coding screen width a little too fast as I indent.
 
-
 ### Line wrap
+
 ```
 set wrap linebreak
 set breakindent
@@ -39,6 +40,7 @@ set breakindent
 `set wrap`does what it says. `set linebreak` makes sure that the line break doesn't chop any word in half as it wraps. `set breakindent` makes wrapped lines start at the same indent as the original line that was broken.
 
 Without breakindent:
+
 ```
 Quote: Marcus Aurelius:
     You have power over
@@ -49,6 +51,7 @@ strength.
 ```
 
 With breakindent:
+
 ```
 Quote:
   Marcus Aurelius:
@@ -61,6 +64,7 @@ Quote:
 ```
 
 ### Relative line numbers
+
 ```
 set relativenumber
 set number
@@ -68,8 +72,8 @@ set number
 
 `set relativenumber` makes the line numbers at the left side of vim be relative to your current line number. But this sets your current line number at 0, which is not very useful. `set number` changes this 0 to your actual line number.
 
-
 ### Word search
+
 ```
 set incsearch
 set nohlsearch
@@ -78,6 +82,7 @@ set nohlsearch
 `set incsearch` highlights results as you type, even before you press enter. `set nohlsearch` removes the highlights immediately after enter is pressed. I prefer things to go back to being clean once I've found what I need.
 
 ### Undo
+
 ```
 set undofile
 set undodir=~/.config/nvim/undodir
@@ -86,6 +91,7 @@ set undodir=~/.config/nvim/undodir
 The combination of these options lets you save undos to the beginning of time, as long as you keep the directory set under `set undodir` safe. Your undos will be saved even if you quit vim and come back.
 
 ### Others
+
 ```
 set termguicolors
 set guicursor=

@@ -60,12 +60,20 @@ export default function About() {
             <li>You Can't Be Seen Until You Learn To See, Seth Godin</li>
             <li>Steve Jobs, Walter Isaacson</li>
             <li>Pathfinder, David Blakeley</li>
-            <li>The Statistical Probability Of Love At First Sight, Jennifer E. Smith</li>
+            <li>
+              The Statistical Probability Of Love At First Sight, Jennifer E.
+              Smith
+            </li>
             <li>Born To Run, Christopher McDougall</li>
-            <li>Why Generalists Triumph In A Specialized World, David Epstein</li>
+            <li>
+              Why Generalists Triumph In A Specialized World, David Epstein
+            </li>
             <li>The Life-Changing Magic Of Tidying Up, Marie Kondo</li>
             <li>The Beginning Of Infinity, David Deutsch</li>
-            <li>The Snowball: Warren Buffett And The Business Of Life, Alice Schroeder</li>
+            <li>
+              The Snowball: Warren Buffett And The Business Of Life, Alice
+              Schroeder
+            </li>
             <li>Netflix And The Culture Of Reinvention, Reed Hastings</li>
           </ul>
         </div>

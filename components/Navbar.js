@@ -2,12 +2,14 @@ import { useTheme } from 'next-themes'
 import NextLink from 'next/link'
 
 function NavbarLink({ href, title }) {
-  const hover = " hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg"
-  const md = " md:px-3 md:py-2 md:mr-2"
-  const sm = " px-1 py-2 mr-2"
+  const hover = ' hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg'
+  const md = ' md:px-3 md:py-2 md:mr-2'
+  const sm = ' px-1 py-2 mr-2'
   return (
     <NextLink href={href}>
-      <a className={"text-gray-900 dark:text-gray-100" + hover + md + sm}>{title}</a>
+      <a className={'text-gray-900 dark:text-gray-100' + hover + md + sm}>
+        {title}
+      </a>
     </NextLink>
   )
 }

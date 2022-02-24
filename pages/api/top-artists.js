@@ -1,4 +1,4 @@
-import { getTopArtists } from '@/lib/spotify';
+import { getTopArtists } from '@/lib/spotify'
 
 const makeEnglish = (str) => {
   const parts = str.replace(/ /g, '-').toLowerCase().split('-')
@@ -12,10 +12,9 @@ const makeEnglish = (str) => {
   return res
 }
 
-
 export default async function handler(_, res) {
-  const response = await getTopArtists();
-  const { items } = await response.json();
+  const response = await getTopArtists()
+  const { items } = await response.json()
 
   // console.log('_________________________________');
   // console.log('artist ->', artist);
@@ -25,13 +24,13 @@ export default async function handler(_, res) {
     // title: track.name
     title: artist.name,
     artist: makeEnglish(artist.genres[0]),
-    songUrl: artist.external_urls.spotify,
-  }));
+    songUrl: artist.external_urls.spotify
+  }))
 
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=86400, stale-while-revalidate=43200'
-  );
+  )
 
-  return res.status(200).json({ artists });
+  return res.status(200).json({ artists })
 }

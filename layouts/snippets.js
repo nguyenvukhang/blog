@@ -1,6 +1,6 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
-import Container from '@/components/Container';
+import Container from '@/components/Container'
 
 export default function SnippetLayout({ children, frontMatter }) {
   return (
@@ -22,5 +22,5 @@ export default function SnippetLayout({ children, frontMatter }) {
         <div className="prose dark:prose-dark w-full">{children}</div>
       </article>
     </Container>
-  );
+  )
 }

@@ -45,10 +45,7 @@ const FeaturedRepos = () => {
         Featured Repositories
       </h3>
       <div className="flex flex-row w-full gap-x-4">
-        <Repo
-          data={data?.ags}
-          gradient={['from-green-400', 'to-blue-400']}
-        />
+        <Repo data={data?.ags} gradient={['from-green-400', 'to-blue-400']} />
         <Repo data={data?.dots} gradient={['from-yellow-400', 'to-red-400']} />
       </div>
       {/* <div className='text-black'>{JSON.stringify(data)}</div> */}

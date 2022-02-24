@@ -1,9 +1,9 @@
-import useSWR from 'swr';
+import useSWR from 'swr'
 
-import fetcher from '@/lib/fetcher';
+import fetcher from '@/lib/fetcher'
 
 export default function NowPlaying() {
-  const { data } = useSWR('/api/now-playing', fetcher);
+  const { data } = useSWR('/api/now-playing', fetcher)
 
   return (
     <div className="flex flex-row-reverse sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
@@ -36,5 +36,5 @@ export default function NowPlaying() {
         </p>
       </div>
     </div>
-  );
+  )
 }

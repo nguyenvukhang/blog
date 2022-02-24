@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 const BlogPost = ({ title, summary, slug, publishedAt }) => {
-  const opts = { year: 'numeric', month: 'short', day: 'numeric' };
-  const date = new Date(publishedAt).toLocaleDateString("en-US", opts)
+  const opts = { year: 'numeric', month: 'short', day: 'numeric' }
+  const date = new Date(publishedAt).toLocaleDateString('en-US', opts)
   return (
     <Link href={`/blog/${slug}`}>
       <a className="w-full">
