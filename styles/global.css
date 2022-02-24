@@ -27,14 +27,21 @@ html {
   }
 }
 
-.contained {
-  @apply text-gray-900 dark:text-gray-100 leading-5;
-}
-
 /* standard html tags.
  * put sizes and colors here.
  * no margins or paddings - keep those local.
  */
+
+.contained {
+  @apply text-gray-900 dark:text-gray-100 leading-5;
+}
+
+.featured-repo {
+  @apply
+  bg-gray-50 hover:bg-gray-50/90
+  dark:bg-gray-850 dark:hover:bg-gray-800/90
+  text-gray-500 dark:text-gray-300;
+}
 
 h1,
 h2,
@@ -58,7 +65,9 @@ h4 {
 }
 
 p {
-  @apply prose text-gray-600 dark:text-gray-400;
+  @apply prose
+  text-gray-600
+  dark:text-gray-300;
 }
 
 a {

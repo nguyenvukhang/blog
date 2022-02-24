@@ -9,6 +9,9 @@ module.exports = {
     extend: {
       colors: {
         black: '#111111',
+        gray: {
+          850: '#18212F'
+        }
       },
       fontFamily: {
         sans: ['Inter', ...fontFamily.sans],
