@@ -1,30 +1,3 @@
-const buttonClass = [
-  'no-underline',
-  'bg-gray-200',
-  'border-2',
-  'border-transparent',
-  'cursor-pointer',
-  'dark:bg-gray-800',
-  'dark:text-gray-300',
-  'mx-1',
-  'px-1',
-  'rounded-md',
-  'text-gray-700'
-]
-const clearClass = [
-  'no-underline',
-  'bg-blue-200',
-  'border-2',
-  'border-transparent',
-  'cursor-pointer',
-  'dark:bg-blue-900',
-  'dark:text-gray-300',
-  'mx-1',
-  'px-1',
-  'rounded-md',
-  'text-gray-700'
-]
-
 const TagList = ({ allTags, activeTag, setActiveTag }) => {
   const tagCount = allTags.reduce((obj: Object[], e:string) => {
     obj[e] = (obj[e] || 0) + 1
@@ -36,7 +9,7 @@ const TagList = ({ allTags, activeTag, setActiveTag }) => {
   return (
     <div className="flex flex-wrap max-w-2xl">
       {tags.map((e) => (
-        <div className="mb-1.5" key={e[0]}>
+        <div className="mb-1.5 leading-8" key={e[0]}>
           <a
             className={`tag-button ${(activeTag == e[0] ? 'tag-selected' : '')}`}
             onClick={() => setActiveTag(e[0])}
