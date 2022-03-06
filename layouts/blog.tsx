@@ -2,10 +2,7 @@ import Image from 'next/image'
 import { parseISO, format } from 'date-fns'
 
 import Container from '@/components/Container'
-
-type AvatarProps = {
-  size: number
-}
+import { AvatarProps } from '@/types/index'
 
 const Avatar = ({ size }: AvatarProps) => (
   <Image
@@ -17,20 +14,22 @@ const Avatar = ({ size }: AvatarProps) => (
   />
 )
 
-const ArticleDetails = ({ frontMatter }) => (
-  <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-4 mb-8">
-    <div className="flex items-center">
-      <Avatar size={24} />
-      <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
-        {'khang / '}
-        {format(parseISO(frontMatter.publishedAt), 'MMM d, yyyy')}
+const ArticleDetails = ({ frontMatter }) => {
+  const date = format(parseISO(frontMatter.publishedAt), 'MMM d, yyyy')
+  return (
+    <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-4 mb-8">
+      <div className="flex items-center">
+        <Avatar size={24} />
+        <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
+          {`khang / ${date}`}
+        </p>
+      </div>
+      <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
+        {frontMatter.readingTime.text}
       </p>
     </div>
-    <p className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
-      {frontMatter.readingTime.text}
-    </p>
-  </div>
-)
+  )
+}
 
 const ArticleContent = ({ children }) => (
   <div className="prose dark:prose-dark">{children}</div>

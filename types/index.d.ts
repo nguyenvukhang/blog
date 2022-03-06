@@ -19,6 +19,24 @@ export type TrackProps = {
   subtitle: string
 }
 
+export type PageMeta = {
+  [key: string]: {
+    title: string
+    description: string
+  }
+}
+
+export type AvatarProps = {
+  size: number
+}
+
+type ReadingTime = {
+  text: string
+  minutes: number
+  time: number
+  words: number
+}
+
 export type BlogProps = {
   title: string
   summary: string
@@ -27,9 +45,7 @@ export type BlogProps = {
   tags: Array<string>
 }
 
-export type PageMeta = {
-  [key: string]: {
-    title: string
-    description: string
-  }
+interface FrontMatter extends BlogProps {
+  wordCount: number
+  readingTime: ReadingTime
 }
