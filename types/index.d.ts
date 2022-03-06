@@ -1,3 +1,7 @@
+import { GrayMatterFile } from 'gray-matter'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { ReadTimeResults } from 'reading-time'
+
 export type LinkProps = {
   href: string
   children: string
@@ -30,13 +34,6 @@ export type AvatarProps = {
   size: number
 }
 
-type ReadingTime = {
-  text: string
-  minutes: number
-  time: number
-  words: number
-}
-
 export type BlogProps = {
   title: string
   summary: string
@@ -45,7 +42,14 @@ export type BlogProps = {
   tags: Array<string>
 }
 
-interface FrontMatter extends BlogProps {
+export type FrontMatter = {
   wordCount: number
-  readingTime: ReadingTime
+  readingTime: ReadTimeResults
+} & BlogProps
+
+export type MdxSource = MDXRemoteSerializeResult<Record<string, unknown>>
+
+export type PostProps = {
+  mdxSource: MdxSource
+  frontMatter: FullFrontMatter
 }

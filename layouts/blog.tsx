@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { parseISO, format } from 'date-fns'
 
 import Container from '@/components/Container'
-import { AvatarProps } from '@/types/index'
+import { AvatarProps, FrontMatter } from '@/types/index'
 
 const Avatar = ({ size }: AvatarProps) => (
   <Image
@@ -35,7 +35,7 @@ const ArticleContent = ({ children }) => (
   <div className="prose dark:prose-dark">{children}</div>
 )
 
-export default function BlogLayout({ children, frontMatter }) {
+export default function BlogLayout({ children, frontMatter }: { children: any; frontMatter: FrontMatter }) {
   return (
     <Container
       title={frontMatter.title.toLowerCase()}

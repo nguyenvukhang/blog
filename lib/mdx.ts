@@ -1,9 +1,10 @@
 import fs from 'fs'
-import matter from 'gray-matter'
+import matter, { GrayMatterFile } from 'gray-matter'
 import path from 'path'
 import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
 import mdxPrism from 'mdx-prism'
+import { FrontMatter, MdxSource } from '@/types/index'
 
 const root = process.cwd()
 
@@ -11,13 +12,13 @@ export async function getFiles(type) {
   return fs.readdirSync(path.join(root, 'data', type))
 }
 
-export async function getFileBySlug({type, slug}) {
+export async function getFileBySlug({ type, slug }) {
   const source = slug
     ? fs.readFileSync(path.join(root, 'data', type, `${slug}.mdx`), 'utf8')
     : fs.readFileSync(path.join(root, 'data', `${type}.mdx`), 'utf8')
 
-  const { data, content } = matter(source)
-  const mdxSource = await serialize(content, {
+  const { data, content }: GrayMatterFile<string> = matter(source)
+  const mdxSource: MdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
         require('remark-slug'),
@@ -35,15 +36,17 @@ export async function getFileBySlug({type, slug}) {
     }
   })
 
-  return {
-    mdxSource,
-    frontMatter: {
-      wordCount: content.split(/\s+/gu).length,
-      readingTime: readingTime(content),
-      slug: slug || null,
-      ...data
-    }
+  const frontMatter: FrontMatter = {
+    wordCount: content.split(/\s+/gu).length,
+    readingTime: readingTime(content),
+    slug: slug || null,
+    title: data.title,
+    summary: data.summary || null,
+    publishedAt: data.publishedAt || null,
+    tags: data.tags || null
   }
+
+  return { mdxSource, frontMatter }
 }
 
 export async function getAllFilesFrontMatter(type) {
