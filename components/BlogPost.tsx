@@ -2,7 +2,11 @@ import Link from 'next/link'
 import { BlogProps } from '@/types/index'
 
 const BlogPost = ({ title, summary, slug, publishedAt }: BlogProps) => {
-  const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: 'short', day: 'numeric' }
+  const opts: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  }
   const date: string = new Date(publishedAt).toLocaleDateString('en-US', opts)
   return (
     <Link href={`/blog/${slug}`}>

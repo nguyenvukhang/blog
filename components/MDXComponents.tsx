@@ -1,20 +1,5 @@
-import Link from 'next/link'
+import Link from '@/components/Link'
 import Image from 'next/image'
-
-const CustomLink = (props: { href: string; children: any }) => {
-  const href = props.href
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'))
-
-  if (isInternalLink) {
-    return (
-      <Link href={href}>
-        <a {...props}>{props.children}</a>
-      </Link>
-    )
-  } else {
-    return <a target="_blank" rel="noopener noreferrer" {...props} />
-  }
-}
 
 const CenteredImage = (props: any) => {
   const outer = {
@@ -86,7 +71,7 @@ const MDXComponents = {
   Img,
   Image,
   CenteredImage,
-  a: CustomLink
+  a: Link
 }
 
 export default MDXComponents

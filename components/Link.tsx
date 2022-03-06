@@ -2,7 +2,7 @@ import NextLink from 'next/link'
 import { LinkProps } from '@/types/index'
 
 const Link = ({ href, children, className }: LinkProps) => {
-  const isInternal = href[0] === '/'
+  const isInternal = href && (href.startsWith('/') || href.startsWith('#'))
   return isInternal ? (
     <NextLink href={href}>
       <a className={className}>{children}</a>
