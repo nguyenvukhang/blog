@@ -21,7 +21,7 @@ export type BlogEntry = {
 }
 
 export type TrackProps = {
-  ranking: string
+  ranking: number
   url: string
   title: string
   subtitle: string
