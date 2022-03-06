@@ -43,7 +43,7 @@ function NowPlaying() {
       <GrSpotify color="#1ED760" />
       <div className="flex items-center sm:flex-row w-full max-w-full truncate">
         {nowPlaying.songUrl ? (
-          <Link className="paragraph no-underline" href={nowPlaying.songUrl}>
+          <Link className="paragraph footer-link" href={nowPlaying.songUrl}>
             {nowPlaying.title}
           </Link>
         ) : (
