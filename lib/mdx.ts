@@ -3,7 +3,6 @@ import matter, { GrayMatterFile } from 'gray-matter'
 import path from 'path'
 import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
-import mdxPrism from 'mdx-prism'
 import { BlogProps, FrontMatter, MdxSource } from '@/types/index'
 
 const root = process.cwd()
@@ -29,7 +28,7 @@ export async function getFileBySlug({ type, slug }) {
         ],
         require('remark-code-titles')
       ],
-      rehypePlugins: [mdxPrism]
+      rehypePlugins: [require('mdx-prism')]
     }
   })
 
