@@ -12,7 +12,7 @@ export type Timeline = Array<{
   }>
 }>
 
-type BlogEntry = {
+export type BlogEntry = {
   title: string
   publishedAt: string
   summary: string
@@ -20,3 +20,9 @@ type BlogEntry = {
   slug: string
 }
 
+export type TrackProps = {
+  ranking: string
+  url: string
+  title: string
+  subtitle: string
+}
