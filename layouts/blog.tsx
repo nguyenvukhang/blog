@@ -6,7 +6,7 @@ import { AvatarProps, FrontMatter } from '@/types/index'
 
 const Avatar = ({ size }: AvatarProps) => (
   <Image
-    alt="Khang"
+    alt="khang"
     height={size}
     width={size}
     src="/avatar.jpg"

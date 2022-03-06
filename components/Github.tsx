@@ -26,7 +26,7 @@ export function RepoTitle({ children, className }) {
   return (
     <div className={`flex flex-row items-center ${className}`}>
       <GrBook />
-      <h4 className="ml-3">{children}</h4>
+      <h5 className="ml-3">{children}</h5>
     </div>
   )
 }

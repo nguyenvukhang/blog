@@ -14,7 +14,7 @@ const Divider = () => {
   )
 }
 
-const Year = ({ children }) => <h4 className="mb-4">{children}</h4>
+const Year = ({ children }) => <h5 className="mb-4">{children}</h5>
 
 const Checkmark = () => {
   return (

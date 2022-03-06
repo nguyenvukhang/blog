@@ -13,7 +13,7 @@ const BlogPost = ({ title, summary, slug, publishedAt }: BlogProps) => {
       <a className="w-full no-underline">
         <div className="mb-8 w-full">
           <div className="flex flex-col md:flex-row justify-between">
-            <h4 className="font-medium mb-2">{title}</h4>
+            <h5 className="font-medium mb-2">{title}</h5>
             <p className="lighter text-left md:text-right w-32 mb-4 md:mb-0">
               {date}
             </p>
