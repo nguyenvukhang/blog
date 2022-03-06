@@ -5,14 +5,15 @@ import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
 import { BlogProps, FrontMatter, MdxSource } from '@/types/index'
 
-const root = process.cwd()
+const root: string = process.cwd()
 
 export async function getFiles(type: string) {
-  return fs.readdirSync(path.join(root, 'data', type))
+  const files: Array<string> = fs.readdirSync(path.join(root, 'data', type))
+  return files
 }
 
 export async function getFileBySlug({ type, slug }) {
-  const source = fs.readFileSync(
+  const source: string = fs.readFileSync(
     path.join(root, 'data', slug ? type : '', `${slug}.mdx`),
     'utf8'
   )
