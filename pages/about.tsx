@@ -35,7 +35,7 @@ export default function About() {
           </p>
           <p>
             You can contact{' '}
-            <a href="mailto:me@nguyenvukhang.com">me@nguyenvukhang.com</a>.
+            <a className='email-link' href="mailto:me@nguyenvukhang.com">me@nguyenvukhang.com</a>.
           </p>
         </div>
       </div>

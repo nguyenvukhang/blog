@@ -1,4 +1,5 @@
 const buttonClass = [
+  'no-underline',
   'bg-gray-200',
   'border-2',
   'border-transparent',
@@ -11,6 +12,7 @@ const buttonClass = [
   'text-gray-700'
 ]
 const clearClass = [
+  'no-underline',
   'bg-blue-200',
   'border-2',
   'border-transparent',
@@ -36,10 +38,7 @@ const TagList = ({ allTags, activeTag, setActiveTag }) => {
       {tags.map((e) => (
         <div className="mb-1.5" key={e[0]}>
           <a
-            className={
-              buttonClass.join(' ') +
-              (activeTag == e[0] ? ' border-blue-400' : '')
-            }
+            className={`tag-button ${(activeTag == e[0] ? 'tag-selected' : '')}`}
             onClick={() => setActiveTag(e[0])}
           >
             <span>
@@ -52,7 +51,7 @@ const TagList = ({ allTags, activeTag, setActiveTag }) => {
         </div>
       ))}
       <div className="mb-1.5">
-        <a onClick={() => setActiveTag('')} className={clearClass.join(' ')}>
+        <a onClick={() => setActiveTag('')} className='tag-clear'>
           clear
         </a>
       </div>
