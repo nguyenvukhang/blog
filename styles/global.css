@@ -110,7 +110,7 @@ a.tag-clear {
   /* dark mode */
   dark:bg-blue-700 dark:border-blue-700
   dark:text-gray-200
-  dark:hover:bg-blue-700 dark:hover:border-blue-700;
+  dark:hover:bg-blue-600 dark:hover:border-blue-600;
 }
 
 /*

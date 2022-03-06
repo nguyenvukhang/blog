@@ -61,7 +61,7 @@ const inlineCode = ({ children }) => {
 }
 
 const pre = ({ children }) => {
-  return <pre className='leading-5 bg-gray-50'>{children}</pre>
+  return <pre className='leading-5 bg-gray-50 dark:bg-gray-800'>{children}</pre>
 }
 
 const MDXComponents = {

@@ -32,7 +32,7 @@ const ArticleDetails = ({ frontMatter }) => {
 }
 
 const ArticleContent = ({ children }) => (
-  <div className="prose dark:prose-dark">{children}</div>
+  <div className="prose dark:prose-dark mb-8">{children}</div>
 )
 
 export default function BlogLayout({ children, frontMatter }: { children: any; frontMatter: FrontMatter }) {
