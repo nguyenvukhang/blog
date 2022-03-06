@@ -8,14 +8,15 @@ import { BlogProps, FrontMatter, MdxSource } from '@/types/index'
 
 const root = process.cwd()
 
-export async function getFiles(type) {
+export async function getFiles(type: string) {
   return fs.readdirSync(path.join(root, 'data', type))
 }
 
 export async function getFileBySlug({ type, slug }) {
-  const source = slug
-    ? fs.readFileSync(path.join(root, 'data', type, `${slug}.mdx`), 'utf8')
-    : fs.readFileSync(path.join(root, 'data', `${type}.mdx`), 'utf8')
+  const source = fs.readFileSync(
+    path.join(root, 'data', slug ? type : '', `${slug}.mdx`),
+    'utf8'
+  )
 
   const { data, content }: GrayMatterFile<string> = matter(source)
   const mdxSource: MdxSource = await serialize(content, {
@@ -24,11 +25,7 @@ export async function getFileBySlug({ type, slug }) {
         require('remark-slug'),
         [
           require('remark-autolink-headings'),
-          {
-            linkProperties: {
-              className: ['anchor']
-            }
-          }
+          { linkProperties: { className: ['anchor'] } }
         ],
         require('remark-code-titles')
       ],
@@ -50,17 +47,20 @@ export async function getFileBySlug({ type, slug }) {
 }
 
 export async function getAllFilesFrontMatter(type: string) {
-  const files = fs.readdirSync(path.join(root, 'data', type))
-  const response: Array<BlogProps> = files.reduce((allPosts, postSlug) => {
+  const files: Array<string> = fs.readdirSync(path.join(root, 'data', type))
+  const posts: Array<BlogProps> = files.reduce((posts, slug) => {
     const source = fs.readFileSync(
-      path.join(root, 'data', type, postSlug),
+      path.join(root, 'data', type, slug),
       'utf8'
     )
     const { data }: GrayMatterFile<string> = matter(source)
 
-    const packet = [{ ...data, slug: postSlug.replace('.mdx', '') }, ...allPosts]
+    const packet: Array<BlogProps> = [
+      { ...data, slug: slug.replace(/.mdx$/g, '') },
+      ...posts
+    ]
 
-    return packet 
+    return packet
   }, [])
-  return response
+  return posts
 }
