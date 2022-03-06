@@ -12,17 +12,17 @@ export type Timeline = Array<{
   }>
 }>
 
-export type BlogEntry = {
-  title: string
-  publishedAt: string
-  summary: string
-  tags: Array<string>
-  slug: string
-}
-
 export type TrackProps = {
   ranking: number
   url: string
   title: string
   subtitle: string
+}
+
+type BlogProps = {
+  title: string
+  summary: string
+  slug: string
+  publishedAt: string
+  tags: Array<string>
 }

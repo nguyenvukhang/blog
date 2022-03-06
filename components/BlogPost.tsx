@@ -1,11 +1,5 @@
 import Link from 'next/link'
-
-type BlogProps = {
-  title: string
-  summary: string
-  slug: string
-  publishedAt: string
-}
+import { BlogProps } from '@/types/index'
 
 const BlogPost = ({ title, summary, slug, publishedAt }: BlogProps) => {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: 'short', day: 'numeric' }
