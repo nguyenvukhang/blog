@@ -4,7 +4,7 @@ import path from 'path'
 import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
 import mdxPrism from 'mdx-prism'
-import { FrontMatter, MdxSource } from '@/types/index'
+import { BlogProps, FrontMatter, MdxSource } from '@/types/index'
 
 const root = process.cwd()
 
@@ -49,22 +49,19 @@ export async function getFileBySlug({ type, slug }) {
   return { mdxSource, frontMatter }
 }
 
-export async function getAllFilesFrontMatter(type) {
+export async function getAllFilesFrontMatter(type: string) {
   const files = fs.readdirSync(path.join(root, 'data', type))
-
-  return files.reduce((allPosts, postSlug) => {
+  const response: Array<BlogProps> = files.reduce((allPosts, postSlug) => {
     const source = fs.readFileSync(
       path.join(root, 'data', type, postSlug),
       'utf8'
     )
-    const { data } = matter(source)
+    const { data }: GrayMatterFile<string> = matter(source)
 
-    return [
-      {
-        ...data,
-        slug: postSlug.replace('.mdx', '')
-      },
-      ...allPosts
-    ]
+    const packet = [{ ...data, slug: postSlug.replace('.mdx', '') }, ...allPosts]
+
+    return packet 
   }, [])
+  console.log('getAllFilesFrontMatter', response)
+  return response
 }

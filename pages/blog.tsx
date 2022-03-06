@@ -80,7 +80,7 @@ export default function Blog({ posts }: { posts: Array<BlogProps> }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter('blog')
+  const posts: Array<BlogProps> = await getAllFilesFrontMatter('blog')
 
   return { props: { posts } }
 }
