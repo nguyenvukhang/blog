@@ -62,6 +62,5 @@ export async function getAllFilesFrontMatter(type: string) {
 
     return packet 
   }, [])
-  console.log('getAllFilesFrontMatter', response)
   return response
 }

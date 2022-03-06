@@ -8,22 +8,41 @@ import { BlogProps } from '@/types/index'
 import td from '@/data/titles-and-descriptions'
 
 export default function Blog({ posts }: { posts: Array<BlogProps> }) {
-  const allTags = posts.reduce((a, b) => [...a, ...b.tags], [])
-  const [activeTag, setActiveTag] = useState('')
+  const allTags: Array<string> = posts.reduce(
+    (a, b) => [...a, ...b.tags],
+    []
+  )
+  const [activeTags, setActiveTags] = useState<Array<string>>([])
   const [searchValue, setSearchValue] = useState('')
 
   const byDate = (a: BlogProps, b: BlogProps) => {
-    return Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    return (
+      Number(new Date(b.publishedAt)) -
+      Number(new Date(a.publishedAt))
+    )
   }
 
-  const filterTag = (frontMatter: BlogProps) =>
-    frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()) &&
-    (!activeTag.length || frontMatter.tags.includes(activeTag))
+  const isSubset = (A: Array<string>, B: Array<string>) => {
+    // checks if B is a subset of A
+    return B.every((val: string) => A.indexOf(val) >= 0)
+  }
 
-  const filteredBlogPosts = posts.sort(byDate).filter(filterTag)
+  const searchQuery = (frontMatter: BlogProps) =>
+    frontMatter.title
+      .toLowerCase()
+      .includes(searchValue.toLowerCase())
+
+  const filterTags = (frontMatter: BlogProps) =>
+    searchQuery(frontMatter) &&
+    (!activeTags.length || isSubset(frontMatter.tags, activeTags))
+
+  const filteredBlogPosts = posts.sort(byDate).filter(filterTags)
 
   return (
-    <Container title={td.blog.title} description={td.blog.description}>
+    <Container
+      title={td.blog.title}
+      description={td.blog.description}
+    >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Blog
@@ -59,8 +78,8 @@ export default function Blog({ posts }: { posts: Array<BlogProps> }) {
         </div>
         <TagList
           allTags={allTags}
-          activeTag={activeTag}
-          setActiveTag={setActiveTag}
+          activeTags={activeTags}
+          setActiveTags={setActiveTags}
         />
         <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
           All Posts
