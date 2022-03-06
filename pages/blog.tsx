@@ -4,8 +4,9 @@ import Container from '@/components/Container'
 import BlogPost from '@/components/BlogPost'
 import TagList from '@/components/TagList'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { BlogEntry } from '@/types/index'
 
-export default function Blog({ posts }) {
+export default function Blog({ posts }: {posts: Array<BlogEntry>}) {
   const allTags = posts.reduce((a, b) => [...a, ...b.tags], [])
   const [activeTag, setActiveTag] = useState('')
   const [searchValue, setSearchValue] = useState('')
