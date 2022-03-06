@@ -76,10 +76,7 @@ const inlineCode = ({ children }) => {
 }
 
 const pre = ({ children }) => {
-  const style = {
-    lineHeight: '1.25em'
-  }
-  return <pre style={style}>{children}</pre>
+  return <pre className='leading-5 bg-gray-50'>{children}</pre>
 }
 
 const MDXComponents = {
