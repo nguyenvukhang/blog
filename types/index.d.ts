@@ -23,6 +23,13 @@ export type TrackProps = {
   subtitle: string
 }
 
+type TopList = Array<{
+  title: string
+  subtitle: string
+  url: string
+}>
+
+
 export type PageMeta = {
   [key: string]: {
     title: string

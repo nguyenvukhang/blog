@@ -2,26 +2,21 @@ import useSWR from 'swr'
 import Track from '@/components/Track'
 import { GrSpotify } from './Icons'
 import Link from './Link'
+import { TopList } from '@/types/index'
 
 async function fetcher(key: any) {
   const res = await fetch(key)
   return res.json()
 }
 
-type TopList = Array<{
-  title: string
-  subtitle: string
-  url: string
-}>
-
 function TopTracks() {
   const tracks: TopList = useSWR('/api/spotify?type=top-tracks', fetcher).data
   return tracks ? (
-    <>
+    <div className='mb-8'>
       {tracks.map((track, index) => (
         <Track ranking={index + 1} key={index} {...track} />
       ))}
-    </>
+    </div>
   ) : null
 }
 
