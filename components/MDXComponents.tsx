@@ -1,5 +1,6 @@
 import Link from '@/components/Link'
 import Image from 'next/image'
+import React from 'react'
 
 const CenteredImage = (props: any) => {
   const outer = {
@@ -43,11 +44,11 @@ const Kbd = ({ children }) => {
   return (
     <>
       <kbd style={style}>{parts.shift()}</kbd>
-      {parts.map((d: string) => (
-        <>
+      {parts.map((d: string, i: number) => (
+        <React.Fragment key={i}>
           <span style={span}>+</span>
           <kbd style={style}>{d}</kbd>
-        </>
+        </React.Fragment>
       ))}
     </>
   )
@@ -61,7 +62,7 @@ const inlineCode = ({ children }) => {
 }
 
 const pre = ({ children }) => {
-  return <pre className='leading-5 bg-gray-50 dark:bg-gray-800'>{children}</pre>
+  return <pre className="leading-5 bg-gray-50 dark:bg-gray-800">{children}</pre>
 }
 
 const MDXComponents = {
