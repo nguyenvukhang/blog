@@ -1,9 +1,10 @@
 import Container from '@/components/Container'
 import Image from 'next/image'
+import td from '@/data/titles-and-descriptions'
 
 export default function About() {
   return (
-    <Container title="About – Khang">
+    <Container title={td.about.title} description={td.about.description}>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           About Me

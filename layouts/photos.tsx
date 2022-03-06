@@ -1,8 +1,9 @@
 import Container from '@/components/Container'
+import td from '@/data/titles-and-descriptions'
 
 export default function PhotosLayout({ children }) {
   return (
-    <Container title="Photos – Khang" description="Here's some photos of me">
+    <Container title={td.photos.title} description={td.photos.description}>
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Photos of me

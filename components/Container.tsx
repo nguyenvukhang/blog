@@ -30,7 +30,15 @@ function Meta({ meta, router }) {
   )
 }
 
-export default function Container(props: any) {
+type ContainerProps = {
+  children: any
+  title: string
+  description: string
+  date?: string
+  type?: string
+}
+
+export default function Container(props: ContainerProps) {
   const router = useRouter()
   const [mounted, setMounted] = useState(false)
 
@@ -39,8 +47,8 @@ export default function Container(props: any) {
 
   const { children, ...customMeta } = props
   const meta = {
-    title: 'Khang.',
-    description: `Developer, athlete, student`,
+    title: 'khang',
+    description: 'developer, athlete, student',
     type: 'website',
     ...customMeta
   }

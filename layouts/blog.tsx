@@ -14,7 +14,7 @@ function BlogTitle({ children }) {
 export default function BlogLayout({ children, frontMatter }) {
   return (
     <Container
-      title={`${frontMatter.title} – Khang`}
+      title={frontMatter.title.toLowerCase()}
       description={frontMatter.summary}
       date={new Date(frontMatter.publishedAt).toISOString()}
       type="article"

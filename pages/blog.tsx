@@ -5,8 +5,9 @@ import BlogPost from '@/components/BlogPost'
 import TagList from '@/components/TagList'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import { BlogProps } from '@/types/index'
+import td from '@/data/titles-and-descriptions'
 
-export default function Blog({ posts }: {posts: Array<BlogProps>}) {
+export default function Blog({ posts }: { posts: Array<BlogProps> }) {
   const allTags = posts.reduce((a, b) => [...a, ...b.tags], [])
   const [activeTag, setActiveTag] = useState('')
   const [searchValue, setSearchValue] = useState('')
@@ -23,10 +24,7 @@ export default function Blog({ posts }: {posts: Array<BlogProps>}) {
     )
 
   return (
-    <Container
-      title="Blog – Khang"
-      description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
-    >
+    <Container title={td.blog.title} description={td.blog.description}>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Blog

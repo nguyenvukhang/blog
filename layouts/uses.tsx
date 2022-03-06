@@ -1,11 +1,9 @@
 import Container from '@/components/Container'
+import td from '@/data/titles-and-descriptions'
 
 export default function UsesLayout({ children }) {
   return (
-    <Container
-      title="Uses – Khang"
-      description="Here's what tech I'm currently using for coding, videos, and music."
-    >
+    <Container title={td.uses.title} description={td.uses.description}>
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           My Gear

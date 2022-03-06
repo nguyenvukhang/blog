@@ -1,5 +1,6 @@
 import Container from '@/components/Container'
 import FunctionCard from '@/components/FunctionCard'
+import td from '@/data/titles-and-descriptions'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 
 export default function Snippets({ snippets }) {
@@ -14,10 +15,7 @@ export default function Snippets({ snippets }) {
   }
   snippets.sort(compare)
   return (
-    <Container
-      title="Code Snippets – Khang"
-      description="A collection of code snippets – including serverless functions, Node.js scripts, and CSS tricks."
-    >
+    <Container title={td.snippets.title} description={td.snippets.description}>
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Code Snippets
