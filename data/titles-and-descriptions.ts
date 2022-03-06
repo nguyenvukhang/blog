@@ -1,4 +1,6 @@
-const titlesAndDescriptions = {
+import { PageMeta } from "@/types/index"
+
+const titlesAndDescriptions: PageMeta = {
   about: {
     title: 'about',
     description: 'whoami'
@@ -41,5 +43,3 @@ const titlesAndDescriptions = {
 }
 
 export default titlesAndDescriptions
-
-// title={titlesAndDescriptions.smash.title} description={titlesAndDescriptions.smash.description}

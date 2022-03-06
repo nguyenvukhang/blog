@@ -19,10 +19,17 @@ export type TrackProps = {
   subtitle: string
 }
 
-type BlogProps = {
+export type BlogProps = {
   title: string
   summary: string
   slug: string
   publishedAt: string
   tags: Array<string>
+}
+
+export type PageMeta = {
+  [key: string]: {
+    title: string
+    description: string
+  }
 }
