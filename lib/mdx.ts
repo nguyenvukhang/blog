@@ -33,7 +33,7 @@ export async function getFileBySlug({ type, slug }) {
         ],
         require('remark-code-titles')
       ],
-      rehypePlugins: [require('mdx-prism')]
+      rehypePlugins: []
     }
   })
 
