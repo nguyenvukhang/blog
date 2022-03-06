@@ -12,16 +12,15 @@ export default function Blog({ posts }: { posts: Array<BlogProps> }) {
   const [activeTag, setActiveTag] = useState('')
   const [searchValue, setSearchValue] = useState('')
 
-  const filteredBlogPosts = posts
-    .sort(
-      (a, b) =>
-        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-    )
-    .filter(
-      (frontMatter) =>
-        frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()) &&
-        (!activeTag.length || frontMatter.tags.includes(activeTag))
-    )
+  const byDate = (a: BlogProps, b: BlogProps) => {
+    return Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+  }
+
+  const filterTag = (frontMatter: BlogProps) =>
+    frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()) &&
+    (!activeTag.length || frontMatter.tags.includes(activeTag))
+
+  const filteredBlogPosts = posts.sort(byDate).filter(filterTag)
 
   return (
     <Container title={td.blog.title} description={td.blog.description}>
