@@ -2,7 +2,7 @@ const client_id = process.env.SPOTIFY_CLIENT_ID
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET
 const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN
 
-const endpoints = {
+const endpoints: { [key: string]: string } = {
   nowPlaying: 'https://api.spotify.com/v1/me/player/currently-playing',
   topTracks: 'https://api.spotify.com/v1/me/top/tracks',
   topArtists: 'https://api.spotify.com/v1/me/top/artists',
@@ -32,6 +32,8 @@ const spotifyGet = async (endpoint: string) => {
   })
 }
 
-export const getNowPlaying = () => spotifyGet(endpoints.nowPlaying)
-export const getTopTracks = () => spotifyGet(endpoints.topTracks)
-export const getTopArtists = () => spotifyGet(endpoints.topArtists)
+const getNowPlaying = () => spotifyGet(endpoints.nowPlaying)
+const getTopTracks = () => spotifyGet(endpoints.topTracks)
+const getTopArtists = () => spotifyGet(endpoints.topArtists)
+
+export { getNowPlaying, getTopTracks, getTopArtists }
