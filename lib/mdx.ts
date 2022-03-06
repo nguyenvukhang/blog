@@ -12,9 +12,13 @@ export async function getFiles(type: string) {
   return files
 }
 
+function getSourcePath(type: string, slug: string) {
+  return [root, 'data', slug ? type : `${type}.mdx`, slug ? `${slug}.mdx` : '']
+}
+
 export async function getFileBySlug({ type, slug }) {
   const source: string = fs.readFileSync(
-    path.join(root, 'data', slug ? type : '', `${slug}.mdx`),
+    path.join(...getSourcePath(type, slug)),
     'utf8'
   )
 
@@ -49,10 +53,7 @@ export async function getFileBySlug({ type, slug }) {
 export async function getAllFilesFrontMatter(type: string) {
   const files: Array<string> = fs.readdirSync(path.join(root, 'data', type))
   const posts: Array<BlogProps> = files.reduce((posts, slug) => {
-    const source = fs.readFileSync(
-      path.join(root, 'data', type, slug),
-      'utf8'
-    )
+    const source = fs.readFileSync(path.join(root, 'data', type, slug), 'utf8')
     const { data }: GrayMatterFile<string> = matter(source)
 
     const packet: Array<BlogProps> = [

@@ -54,6 +54,7 @@ export default function Container(props: ContainerProps) {
   }
 
   const bg = 'bg-gray-50 dark:bg-gray-900'
+  const padding = 'md:p-0 sm:p-8 p-6'
 
   return (
     <div className={bg}>
@@ -63,7 +64,7 @@ export default function Container(props: ContainerProps) {
       </Head>
       <Navbar mounted={mounted} />
       <main
-        className={`contained flex flex-col justify-center max-w-2xl mx-auto md:p-0 sm:p-8 p-6 ${bg}`}
+        className={`contained flex flex-col justify-center max-w-2xl mx-auto ${padding} ${bg}`}
       >
         {children}
         <Footer />
