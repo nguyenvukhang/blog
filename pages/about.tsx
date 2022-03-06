@@ -4,12 +4,13 @@ import td from '@/data/titles-and-descriptions'
 import { AvatarProps } from '@/types/index'
 
 const Avatar = () => (
-  <div className="flex flex-col items-center">
+  <div className="flex flex-col items-center mb-16">
     <div
-      className="w-48 h-48 rounded-full mx-10 bg-green-100 bg-center bg-no-repeat bg-cover"
+      className="w-48 h-48 rounded-full bg-center bg-cover mb-4"
       style={{ backgroundImage: 'url(/hs.png)' }}
     />
-    <h3>Khang</h3>
+    <h3>Nguyễn Vũ Khang</h3>
+        <p className='lighter'>developer, athlete, student of math</p>
   </div>
 )
 
@@ -17,8 +18,7 @@ export default function About() {
   return (
     <Container title={td.about.title} description={td.about.description}>
       <Avatar />
-      <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400">
-        <p>Hey, I’m Khang. I'm a developer, athlete, and student of math.</p>
+      <div className="mb-8 prose leading-6 text-gray-600 dark:text-gray-400 text-center">
         <p>
           I am a believer in the power of fundamentals. I love working with
           low-level development tools, and I derive meaning from building
