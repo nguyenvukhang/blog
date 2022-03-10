@@ -3,7 +3,7 @@ import { MDXRemote } from 'next-mdx-remote'
 import { getFileBySlug } from '@/lib/mdx'
 import UsesLayout from '@/layouts/uses'
 
-export default function Uses({ mdxSource }) {
+export default function Uni({ mdxSource }) {
   return (
     <UsesLayout>
       <MDXRemote {...mdxSource} />
@@ -12,7 +12,7 @@ export default function Uses({ mdxSource }) {
 }
 
 export async function getStaticProps() {
-  const uses = await getFileBySlug({type: 'uses', slug: false})
+  const uni = await getFileBySlug({type: 'uni', slug: false})
 
-  return { props: uses }
+  return { props: uni }
 }
