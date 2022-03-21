@@ -6,8 +6,7 @@ import MDXComponents from '@/components/MDXComponents'
 import { anon } from '@/lib/firebase'
 
 export default function App({ Component, pageProps }) {
-  console.log(anon)
-  console.log('GOT HERE')
+  console.log('anonymous user object:', anon)
   return (
     <ThemeProvider attribute="class">
       <MDXProvider components={MDXComponents}>
