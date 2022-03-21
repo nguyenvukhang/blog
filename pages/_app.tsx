@@ -7,6 +7,7 @@ import { anon } from '@/lib/firebase'
 
 export default function App({ Component, pageProps }) {
   console.log(anon)
+  console.log('GOT HERE')
   return (
     <ThemeProvider attribute="class">
       <MDXProvider components={MDXComponents}>
