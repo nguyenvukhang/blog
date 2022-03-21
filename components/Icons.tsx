@@ -12,8 +12,8 @@ export const GrBook = ({ color, size, title, className }: IconProps) => (
     strokeWidth="0"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
-    height={size ? size : '1rem'}
-    width={size ? size : '1rem'}
+    height={size ? size : '24'}
+    width={size ? size : '24'}
     style={{ color }}
     className={className ? className : ''}
   >
@@ -34,8 +34,8 @@ export const VscRepoForked = ({ color, size, title, className }: IconProps) => (
     strokeWidth="0"
     viewBox="0 0 16 16"
     xmlns="http://www.w3.org/2000/svg"
-    height={size ? size : '1rem'}
-    width={size ? size : '1rem'}
+    height={size ? size : '24'}
+    width={size ? size : '24'}
     style={{ color }}
     className={className ? className : ''}
   >
@@ -56,8 +56,8 @@ export const GrSpotify = ({ color, size, title, className }: IconProps) => (
     strokeWidth="0"
     viewBox="0 0 25 25"
     xmlns="http://www.w3.org/2000/svg"
-    height={size ? size : '1rem'}
-    width={size ? size : '1rem'}
+    height={size ? size : '24'}
+    width={size ? size : '24'}
     style={{ color }}
     className={className ? className : ''}
   >
