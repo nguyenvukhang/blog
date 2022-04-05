@@ -29,8 +29,6 @@ const auth = getAuth(app)
 let anon: any
 signInAnonymously(auth)
   .then((a) => {
-    console.log('successful anonymous signin')
-    console.log(a)
     anon = a
   })
   .catch((error) => {
