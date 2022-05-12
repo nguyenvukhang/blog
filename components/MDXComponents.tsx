@@ -56,7 +56,7 @@ const Kbd = ({ children }) => {
 
 const inlineCode = ({ children }) => {
   const style = {
-    fontWeight: 400
+    fontWeight: 100
   }
   return <code style={style}>{children}</code>
 }
