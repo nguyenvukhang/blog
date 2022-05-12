@@ -43,7 +43,7 @@ const TagList = ({
           </a>
         </div>
       ))}
-      <div className="mb-1.5">
+      <div className="mb-1.5 leading-8">
         <a onClick={handleClear} className="tag-clear">
           clear
         </a>
