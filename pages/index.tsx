@@ -4,13 +4,16 @@ import Container from '@/components/Container'
 import FeaturedRepos from '@/components/FeaturedRepos'
 import td from '@/data/titles-and-descriptions'
 
-const pinnedRepos = ['ags', 'dots', 'minnesoda', 'blog']
+const pinnedRepos = [
+  'modtree/modtree',
+  'nguyenvukhang/nvim-toggler',
+  'nguyenvukhang/ags',
+  'nguyenvukhang/blog'
+]
 const github_token = process.env.GITHUB_TOKEN
 
 export async function getServerSideProps() {
-  const urls = pinnedRepos.map(
-    (repo) => `https://api.github.com/repos/nguyenvukhang/${repo}`
-  )
+  const urls = pinnedRepos.map((repo) => `https://api.github.com/repos/${repo}`)
   const requests = urls.map((url) =>
     fetch(url, {
       method: 'GET',
@@ -21,7 +24,7 @@ export async function getServerSideProps() {
     (acc, curr) => ((acc[curr.name] = curr), acc),
     {}
   )
-  return { props: { repoData, pinnedRepos } }
+  return { props: { repoData, pinnedRepos: Object.keys(repoData) } }
 }
 
 export default function Home({ repoData, pinnedRepos }) {
