@@ -43,14 +43,18 @@ const FeaturedRepos = ({ data, repos }) => {
     ['from-yellow-400', 'to-orange-400'],
     ['from-lime-400', 'to-teal-400'],
     ['from-pink-400', 'to-purple-400'],
-    ['from-sky-400', 'to-indigo-400'],
+    ['from-sky-400', 'to-indigo-400']
   ]
   return (
     <>
       <h3 className="mb-6 md:mb-8">Featured Repositories</h3>
       <div className="grid sm:grid-cols-2 grid-cols-1 w-full gap-4 mb-16">
         {repos.map((repo: string, idx: number) => (
-          <Repo data={data ? data[repo] : null} gradient={gradients[idx]} key={repo} />
+          <Repo
+            data={data ? data[repo] : null}
+            gradient={gradients[idx]}
+            key={repo}
+          />
         ))}
       </div>
     </>
