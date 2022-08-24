@@ -1,5 +1,6 @@
 import githubColors from './github-colors-min.json'
 import { GrBook, VscRepoForked } from '@/components/Icons'
+import { RepoForkedIcon, StarIcon } from '@primer/octicons-react'
 
 export function RepoLanguage({ children }) {
   /* capitalizes first letter of each word */
@@ -33,8 +34,17 @@ export function RepoTitle({ children, className }) {
 
 export function RepoForks({ children }) {
   return (
-    <div className="flex items-center">
-      <VscRepoForked />
+    <div className="flex items-center mx-1">
+      <RepoForkedIcon />
+      <div className="ml-1">{children}</div>
+    </div>
+  )
+}
+
+export function RepoStars({ children }) {
+  return (
+    <div className="flex items-center mx-1">
+      <StarIcon />
       <div className="ml-1">{children}</div>
     </div>
   )

@@ -1,4 +1,4 @@
-import { RepoTitle, RepoForks, RepoLanguage } from '@/components/Github'
+import { RepoTitle, RepoForks, RepoStars, RepoLanguage } from '@/components/Github'
 import { useRouter } from 'next/router'
 
 /* at screen sizes sm and below,
@@ -31,6 +31,7 @@ const Repo = ({ data, gradient }) => {
         </div>
         <div className="flex-row mb-1 sm:flex hidden">
           <RepoLanguage>{data?.language}</RepoLanguage>
+          <RepoStars>{data?.stargazers_count}</RepoStars>
           <RepoForks>{data?.forks_count}</RepoForks>
         </div>
       </div>
